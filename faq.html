@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campaign Products Sales</title>
+  <!-- Link to your local Bootstrap 5.3 CSS file -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap/css/index.css">
+  <link rel="stylesheet" href="bootstrap/css/faq.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-light navbar-sm-bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Campaign Products Sales</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item ">
+            
+            <a class="nav-link active" aria-current="page" href="index.html"><i class="fa-solid fa-house me-1"></i>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact"><i class="fa-solid fa-phone me-1"></i>Contact</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="product.html"><i class="fa-solid fa-box-open me-1"></i>
+              Products</a>
+          </li>
+         
+
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html"><i class="fa-solid fa-cart-shopping me-1"></i>Cart</a>
+          </li>
+          <!-- Vertical Line -->
+          <div class="vertical-line"></div>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+              <i class="fa-solid fa-user-plus me-1"></i>Log In
+            </a>
+          </li>
+          
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+   <!-- Login Modal -->
+   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Log In or Sign Up</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Tabs for Login and Sign Up -->
+          <ul class="nav nav-tabs mb-3" id="loginTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active text-black" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Log In</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link text-black" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup" type="button" role="tab" aria-controls="signup" aria-selected="false">Sign Up</button>
+            </li>
+          </ul>
+  
+          <!-- Login Form -->
+          <div class="tab-content" id="loginTabsContent">
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+              <form id="loginForm">
+                <div class="mb-3">
+                  <label for="loginUsername" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="loginUsername" required>
+                </div>
+                <div class="mb-3">
+                  <label for="loginPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Log In</button>
+              </form>
+            </div>
+  
+            <!-- Sign Up Form -->
+            <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+              <form id="signupForm">
+                <div class="mb-3">
+                  <label for="signupUsername" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="signupUsername" required>
+                </div>
+                <div class="mb-3">
+                  <label for="signupEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="signupEmail" required>
+                </div>
+                <div class="mb-3">
+                  <label for="signupPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="signupPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="container mt-5 mb-5" id="faq">
+    <h1 class="text-center mb-4" id="faqtitle">Frequently Asked Questions</h1>
+    <div class="accordion" id="faqAccordion">
+      <!-- FAQ Item 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            What types of camping gear do you sell?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>We offer a wide range of camping gear, including tents, sleeping bags, backpacks, cooking equipment, hiking gear, outdoor apparel, and more. Explore our categories to find everything you need for your next adventure!</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- FAQ Item 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Is your camping gear suitable for beginners?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>Absolutely! We carry products for all skill levels, including beginner-friendly gear with easy setup and clear instructions.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- FAQ Item 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            How do I choose the right tent size?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>Tent sizes are based on the number of people they can accommodate. For extra comfort, consider a tent rated for one more person than your group size (e.g., a 3-person tent for 2 people).</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- FAQ Item 4 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Are your products durable and weather-resistant?
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>Yes, we prioritize high-quality, durable, and weather-resistant gear to ensure your safety and comfort in all conditions.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- FAQ Item 5 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            Do you have a physical store I can visit?
+          </button>
+        </h2>
+        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>Yes, we have a physical store located at Yangon, Myanmar(Burma). Visit us to see our products in person.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- FAQ Item 6 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+            Do your products come with a warranty?
+          </button>
+        </h2>
+        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>Many of our products come with manufacturer warranties. Check the product description or contact us for details.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- FAQ Item 7 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSeven">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+            How do I join the loyalty program?
+          </button>
+        </h2>
+        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>Sign up for free on our website or in-store to start earning points immediately.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- FAQ Item 8 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingEight">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+            How do I return or exchange a product?
+          </button>
+        </h2>
+        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>You can return or exchange products within 30 days of purchase. Visit our Returns & Exchanges page for more details.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- FAQ Item 9 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingNine">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+            Do you offer international shipping?
+          </button>
+        </h2>
+        <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>Yes, we offer international shipping to most countries. Shipping costs and delivery times vary by location.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- FAQ Item 10 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTen">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+            How can I contact customer support?
+          </button>
+        </h2>
+        <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>You can contact our customer support team via email at zexzy219@gmail.com or call us at +95 9686772809.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer footer-animate fixe footer-sm-fixed-bottom">
+    <div class="container">
+      <div class="row">
+        <!-- About Us Section -->
+        <div class="col-md-4 mb-4">
+          <h5>About Us</h5>
+          <p>We provide the best camping services with quality gear, cozy stays, and helpful tips for your adventure.</p>
+        </div>
+  
+        <!-- Contact Info Section -->
+        <div class="col-md-4 mb-4">
+          <h5>Contact Info</h5>
+          <ul class="list-unstyled">
+            <li>Email: zexzy219@gmail.com</li>
+            <li>Phone: +95 9686772809</li>
+            <li>Address: Yangon, Myanmar(Burma)</li>
+          </ul>
+        </div>
+  
+        <!-- Follow Us Section -->
+        <div class="col-md-4 mb-4">
+          <h5>Follow Us</h5>
+          <ul class="list-unstyled">
+            <li><a href="#"><i class="fab fa-facebook me-1"></i>Facebook</a></li>
+            <li><a href="#"><i class="fab fa-twitter me-1"></i>Twitter</a></li>
+            <li><a href="#"><i class="fab fa-instagram me-1"></i>Instagram</a></li>
+          </ul>
+        </div>
+  
+        <!-- Summary Section -->
+        <div class="col-md-4 mb-4">
+          <h5>Summary</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#faq">FAQs</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Copyright Section -->
+      <div class="text-center mt-4">
+        <p>&copy; 2025 Campaign Products Sales. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Link to your local Bootstrap 5.3 JS file -->
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="bootstrap/js/index.js"></script>
+</body>
+</html>

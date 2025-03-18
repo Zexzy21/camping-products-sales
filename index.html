@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campaign Products Sales</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap/css/index.css">
+  <link rel="stylesheet" href="ocss/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  .intro-section
+  {
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('img/Camping19.jpg');
+  }
+</style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light navbar-sm-bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Campaign Products Sales</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item ">
+            
+            <a class="nav-link active" aria-current="page" href="index.html"><i class="fa-solid fa-house me-1"></i>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact"><i class="fa-solid fa-phone me-1"></i>Contact</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="product.html"><i class="fa-solid fa-box-open me-1"></i>
+              Products</a>
+          </li>
+         
+
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html"><i class="fa-solid fa-cart-shopping me-1"></i>Cart</a>
+          </li>
+          <!-- Vertical Line -->
+          <div class="vertical-line"></div>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+              <i class="fa-solid fa-user-plus me-1"></i>Log In
+            </a>
+          </li>
+          
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+   <!-- Login Modal -->
+   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Log In or Sign Up</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Tabs for Login and Sign Up -->
+          <ul class="nav nav-tabs mb-3" id="loginTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active text-black" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Log In</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link text-black" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup" type="button" role="tab" aria-controls="signup" aria-selected="false">Sign Up</button>
+            </li>
+          </ul>
+  
+          <!-- Login Form -->
+          <div class="tab-content" id="loginTabsContent">
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+              <form id="loginForm">
+                <div class="mb-3">
+                  <label for="loginUsername" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="loginUsername" required>
+                </div>
+                <div class="mb-3">
+                  <label for="loginPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Log In</button>
+              </form>
+            </div>
+  
+            <!-- Sign Up Form -->
+            <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+              <form id="signupForm">
+                <div class="mb-3">
+                  <label for="signupUsername" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="signupUsername" required>
+                </div>
+                <div class="mb-3">
+                  <label for="signupEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="signupEmail" required>
+                </div>
+                <div class="mb-3">
+                  <label for="signupPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="signupPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+ 
+
+  <!-- Intro Section -->
+  <section class="intro-section">
+    <div class="container">
+      <h1 class="display-3 mt-5">Welcome to Camping Products Sales</h1>
+      
+      <a href="#gallery" class="btn btn-primary btn-lg mt-5">Explore Gallery</a>
+    </div>
+  </section>
+
+  <!-- Slideshow -->
+  <h2 class="text-center mt-4" id="slide">Our Slideshow</h2>
+  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/Camping8.jpg" class="d-block w-100" alt="Slide 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Explore the Outdoors</h5>
+          <p>Discover the best camping gear for your next adventure.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/Camping3.jpg" class="d-block w-100" alt="Slide 2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Your Journey Starts Here</h5>
+          <p>Step into a world of possibilities with our exclusive collection of campaign gear.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/Camping7.jpg" class="d-block w-100" alt="Slide 3">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Adventure Awaits</h5>
+          <p>Get ready for your next outdoor journey with us.</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+ 
+
+  <!-- popular Products -->
+  <section id="products" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Our Popular Products</h2>
+        <div class="row">
+            <!-- Card 1: Tents -->
+            <div class="col-md-4 mb-4">
+                <div class="card product-card h-100">
+                    <img src="img/Camping12.jpg" class="card-img-top gallery-img" alt="Tents">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Tents</h5>
+                        <p class="card-text">Find your perfect tent—lightweight, family-sized, or weatherproof. Durable, easy setup, and designed for every adventure. Camp in comfort! </p>
+                        <a href="product.html#tent" class="btn btn-primary m-auto">See More Tents </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2: Sleeping Bags -->
+            <div class="col-md-4 mb-4">
+                <div class="card product-card h-100">
+                    <img src="img/Camping13.jpg" class="card-img-top gallery-img" alt="Sleeping Bags">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Sleeping Bags</h5>
+                        <p class="card-text">Sleep soundly in the wild! Explore cozy, lightweight sleeping bags for every season and adventure. Stay warm, stay comfortable! </p>
+                        <a href="product.html#sleeping-bags" class="btn btn-primary m-auto">See More Sleeping Bags</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3: Cooking Gears -->
+            <div class="col-md-4 mb-4">
+                <div class="card product-card h-100">
+                    <img src="img/Camping14.jpg" class="card-img-top gallery-img" alt="Cooking Gears">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Cooking Gears</h5>
+                        <p class="card-text">Cook up a storm outdoors! Discover portable stoves, durable cookware, and handy utensils for delicious campsite meals. Adventure tastes better! </p>
+                        <a href="product.html#cooking-gear" class="btn btn-primary m-auto">See More Cooking Gears</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Explore Products Button -->
+        <div class="d-flex justify-content-center mt-4">
+            <a href="product.html" class="btn btn-primary btn-lg">Explore More Products</a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+   <!-- Image Gallery -->
+   <section id="gallery" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Camping Gallery</h2>
+      <div class="row">
+        <!-- Card 1: Winter Camping -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img src="img/Camping9.jpg" class="card-img-top gallery-img" alt="Winter Camping">
+            <div class="card-body">
+              <h5 class="card-title">Winter Camping</h5>
+              <p class="card-text">Winter camping is cold but fun. Wear warm clothes, bring a strong tent, and enjoy the snow and fresh air.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2: Wild Camping -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img src="img/Camping10.jpg" class="card-img-top gallery-img" alt="Wild Camping">
+            <div class="card-body">
+              <h5 class="card-title">Wild Camping</h5>
+              <p class="card-text">Wild camping is an adventure in nature. Bring a tent, food, and water. Enjoy the quiet, fresh air, and stars.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3: Glamping -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img src="img/Camping11.jpg" class="card-img-top gallery-img" alt="Glamping">
+            <div class="card-body">
+              <h5 class="card-title">Glamping</h5>
+              <p class="card-text">Glamping is camping with comfort. Sleep in a cozy tent, enjoy soft beds, warm lights, and nature with luxury around you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Second Row of Cards -->
+      <div class="row">
+        <!-- Card 4: Car Camping -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img src="img/Camping4.jpg" class="card-img-top gallery-img" alt="Car Camping">
+            <div class="card-body">
+              <h5 class="card-title">Car Camping</h5>
+              <p class="card-text">Car camping is an easy way to travel and sleep outdoors. You can enjoy the outdoors with the comfort of home nearby.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 5: Tent Camping -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img src="img/Camping5.jpg" class="card-img-top gallery-img" alt="Tent Camping">
+            <div class="card-body">
+              <h5 class="card-title">Tent Camping</h5>
+              <p class="card-text">Tent camping is a fun way to sleep outdoors and enjoy nature. Enjoy the quiet, the stars, and the beauty of nature while camping.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 6: Lake View Camping -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img src="img/Camping6.jpg" class="card-img-top gallery-img" alt="Lake View Camping">
+            <div class="card-body">
+              <h5 class="card-title">Lake View Camping</h5>
+              <p class="card-text">Enjoy lake view camping with beautiful sunsets, calm water, and a peaceful outdoor experience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  
+
+  <!-- Footer -->
+  <footer id="contact" class="footer footer-animate">
+    <div class="container">
+      <div class="row">
+        <!-- About Us Section -->
+        <div class="col-md-4 mb-4">
+          <h5>About Us</h5>
+          <p>We provide the best camping services with quality gear, cozy stays, and helpful tips for your adventure.</p>
+        </div>
+  
+        <!-- Contact Info Section -->
+        <div class="col-md-4 mb-4">
+          <h5>Contact Info</h5>
+          <ul class="list-unstyled">
+            <li>Email: zexzy219@gmail.com</li>
+            <li>Phone: +95 9686772809</li>
+            <li>Address: Yangon, Myanmar(Burma)</li>
+          </ul>
+        </div>
+  
+        <!-- Follow Us Section -->
+        <div class="col-md-4 mb-4">
+          <h5>Follow Us</h5>
+          <ul class="list-unstyled">
+            <li><a href="#"><i class="fab fa-facebook me-1"></i>Facebook</a></li>
+            <li><a href="#"><i class="fab fa-twitter me-1"></i>Twitter</a></li>
+            <li><a href="#"><i class="fab fa-instagram me-1"></i>Instagram</a></li>
+          </ul>
+        </div>
+  
+        <!-- Summary Section -->
+        <div class="col-md-4">
+          <h5>Summary</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            
+            <li><a href="#slide">Slideshow</a></li>
+            <li><a href="#products">Popular Products</a></li>
+            <!-- <li><a href="#carouselExample">Slideshow</a></li> -->
+            <li><a href="#gallery">Gallery</a></li>
+            
+          </ul>
+          <ul class="list-unstyled">
+
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+          </ul>
+        </div>
+  
+      <!-- Copyright Section -->
+      <div class="text-center mt-4">
+        <p>&copy; 2025 Campaign Products Sales. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="bootstrap/js/index.js"></script>
+</body>
+</html>
