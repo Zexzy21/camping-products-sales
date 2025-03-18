@@ -46,3 +46,6 @@
     background-color: #dc3545; /* Change delete button background color */
     color: #fff; /* Change delete button text color */
   }
+
+ .footer {
+    position: relative;}
