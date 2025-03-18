@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="bootstrap/css/cart.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+  
 </head>
 <body>
   
@@ -120,7 +121,7 @@
                 <!-- Cart items will be dynamically inserted here -->
             </div>
             <div class="col-md-4">
-                <div class="cart-summary">
+                <div class="cart-summary mt-5">
                     <h4>Order Summary</h4>
                     <ul class="list-unstyled">
                         <li class="d-flex justify-content-between">
@@ -140,13 +141,86 @@
                             <span id="total">$0.00</span>
                         </li>
                     </ul>
-                    <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#successModal">
-                        Order
-                    </button>
+                    
+
+                  
+        <!-- Payment Options -->
+        <div class="payment-options mt-4">
+            <h5>Payment Method</h5>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="creditCard" checked>
+                <label class="form-check-label" for="creditCard">
+                    <i class="bi bi-credit-card me-2"></i>Credit Card
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="paypal" value="paypal">
+                <label class="form-check-label" for="paypal">
+                    <i class="bi bi-paypal me-2"></i>PayPal
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" value="cashOnDelivery">
+                <label class="form-check-label" for="cashOnDelivery">
+                    <i class="bi bi-cash-coin me-2"></i>Cash on Delivery
+                </label>
+            </div>
+        </div>
+
+        <!-- Place Order Button -->
+        <button type="button" class="btn btn-primary w-100 mt-4" data-bs-toggle="modal" data-bs-target="#successModal">
+            Place Order
+        </button>
                 </div>
             </div>
         </div>
     </div>
+    
+</section>
+
+<section id="products" class="py-5 bg-light">
+  <div class="container">
+      <h2 class="text-center mb-4">Best Seller</h2>
+      <div class="row">
+          <!-- Card 1: Tents -->
+          <div class="col-md-4 mb-4">
+              <div class="card product-card h-100">
+                  <img src="img/Camping12.jpg" class="card-img-top gallery-img" alt="Tents">
+                  <div class="card-body d-flex flex-column">
+                      <h5 class="card-title text-center">Tents</h5>
+                      <p class="card-text">Find your perfect tent—lightweight, family-sized, or weatherproof. Durable, easy setup, and designed for every adventure. Camp in comfort! </p>
+                      <a href="product.html#tent" class="btn btn-primary m-auto">See More Tents </a>
+                  </div>
+              </div>
+          </div>
+          <!-- Card 2: Sleeping Bags -->
+          <div class="col-md-4 mb-4">
+              <div class="card product-card h-100">
+                  <img src="img/Camping13.jpg" class="card-img-top gallery-img" alt="Sleeping Bags">
+                  <div class="card-body d-flex flex-column">
+                      <h5 class="card-title text-center">Sleeping Bags</h5>
+                      <p class="card-text">Sleep soundly in the wild! Explore cozy, lightweight sleeping bags for every season and adventure. Stay warm, stay comfortable! </p>
+                      <a href="product.html#sleeping-bags" class="btn btn-primary m-auto">See More Sleeping Bags</a>
+                  </div>
+              </div>
+          </div>
+          <!-- Card 3: Cooking Gears -->
+          <div class="col-md-4 mb-4">
+              <div class="card product-card h-100">
+                  <img src="img/Camping14.jpg" class="card-img-top gallery-img" alt="Cooking Gears">
+                  <div class="card-body d-flex flex-column">
+                      <h5 class="card-title text-center">Cooking Gears</h5>
+                      <p class="card-text">Cook up a storm outdoors! Discover portable stoves, durable cookware, and handy utensils for delicious campsite meals. Adventure tastes better! </p>
+                      <a href="product.html#cooking-gear" class="btn btn-primary m-auto">See More Cooking Gears</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Explore Products Button -->
+      <div class="d-flex justify-content-center mt-4">
+          <a href="product.html" class="btn btn-primary btn-lg">Explore More Products</a>
+      </div>
+  </div>
 </section>
 
 
@@ -173,7 +247,7 @@
 
 
   <!-- Footer -->
-  <footer id="contact" class="footer footer-animate fixed-bottom">
+  <footer id="contact" class="footer footer-animate" >
     <div class="container">
       <div class="row">
         <!-- About Us Section -->
@@ -193,7 +267,8 @@
         </div>
   
         <!-- Follow Us Section -->
-        <div class="col-md-4 mb-4">
+        
+         <div class="col-md-4 mb-4">
           <h5>Follow Us</h5>
           <ul class="list-unstyled">
             <li><a href="#"><i class="fab fa-facebook me-1"></i>Facebook</a></li>
