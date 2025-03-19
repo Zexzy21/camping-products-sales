@@ -6,8 +6,7 @@
   <title>Campaign Products Sales</title>
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="bootstrap/css/index.css">
-  <link rel="stylesheet" href="ocss/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="icon/css/all.min.css">
 <style>
   .intro-section
   {
@@ -124,9 +123,11 @@
     <div class="container">
       <h1 class="display-3 mt-5">Welcome to Camping Products Sales</h1>
       
-      <a href="#gallery" class="btn btn-primary btn-lg mt-5">Explore Gallery</a>
+      <a href="cart.html" class="btn btn-primary btn-lg mt-5">Shop Now</a>
     </div>
   </section>
+
+ 
 
   <!-- Slideshow -->
   <h2 class="text-center mt-4" id="slide">Our Slideshow</h2>
@@ -165,6 +166,239 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+
+    <!-- Discount Section -->
+    <h1 class="text-center mb-5 mt-5">Discount Products</h1>
+    <div class="card-container" id="loop-container">
+      <div class="card-scroll" id="loop-scroll">
+          <!-- Card 1 -->
+          <div class="col-md-4 mb-4" id ="loop">
+            <div class="card product-card">
+              <img src="pimg/tent1.jpg" class="card-img-top" alt="Product 1">
+              <div class="card-body">
+                <h5 class="card-title">White Camping Tent</h5>
+                <p class="text-success">You Can Get 3% Discount</p>
+                <p class="card-text">
+                  <del >$59.99</del>
+                  <strong>$58.19</strong>
+                </p>
+                <a href="cart.html" class="btn btn-primary" onclick="addToCart(event, this)">
+                  <i class="fa-solid fa-cart-shopping me-1"></i>
+                  Add to Cart
+              </a>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-md-4 mb-4" id ="loop">
+            <div class="card product-card">
+              <img src="pimg/sb1.jpg" class="card-img-top" alt="Product 1">
+              <div class="card-body">
+                <h5 class="card-title">Flannel Lined Sleeping Bag</h5>
+                <p class="text-success">You Can Get 5% Discount</p>
+                <p class="card-text">
+                  <del >$23.99</del>
+                  <strong>$22.79</strong>
+                </p>
+                <a href="cart.html" class="btn btn-primary" onclick="addToCart(event, this)">
+                  <i class="fa-solid fa-cart-shopping me-1"></i>
+                  Add to Cart
+              </a>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col-md-4 mb-4" id ="loop">
+            <div class="card product-card">
+              <img src="pimg/cg2.jpg" class="card-img-top" alt="Product 1">
+              <div class="card-body">
+                <h5 class="card-title">Portable Camping Stove</h5>
+                <p class="text-success">You Can Get 15% Discount</p>
+                <p class="card-text">
+                  <del >$159.99</del>
+                  <strong>$135.99</strong>
+                </p>
+                <a href="cart.html" class="btn btn-primary" onclick="addToCart(event, this)">
+                  <i class="fa-solid fa-cart-shopping me-1"></i>
+                  Add to Cart
+              </a>
+              </div>
+            </div>
+          </div>
+          <!-- Duplicate cards for seamless loop -->
+          <!-- Card 1 -->
+          <div class="col-md-4 mb-4" id ="loop">
+            <div class="card product-card">
+              <img src="pimg/tent1.jpg" class="card-img-top" alt="Product 1">
+              <div class="card-body">
+                <h5 class="card-title">White Camping Tent</h5>
+                <p class="text-success">You Can Get 3% Discount</p>
+                <p class="card-text">
+                  <del >$59.99</del>
+                  <strong>$58.19</strong>
+                </p>
+                <a href="cart.html" class="btn btn-primary" onclick="addToCart(event, this)">
+                  <i class="fa-solid fa-cart-shopping me-1"></i>
+                  Add to Cart
+              </a>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-md-4 mb-4" id ="loop">
+            <div class="card product-card">
+              <img src="pimg/sb1.jpg" class="card-img-top" alt="Product 1">
+              <div class="card-body">
+                <h5 class="card-title">Flannel Lined Sleeping Bag</h5>
+                <p class="text-success">You Can Get 5% Discount</p>
+                <p class="card-text">
+                  <del >$23.99</del>
+                  <strong>$22.79</strong>
+                </p>
+                <a href="cart.html" class="btn btn-primary" onclick="addToCart(event, this)">
+                  <i class="fa-solid fa-cart-shopping me-1"></i>
+                  Add to Cart
+              </a>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col-md-4 mb-4" id ="loop">
+            <div class="card product-card">
+              <img src="pimg/cg2.jpg" class="card-img-top" alt="Product 1">
+              <div class="card-body">
+                <h5 class="card-title">Portable Camping Stove</h5>
+                <p class="text-success">You Can Get 15% Discount</p>
+                <p class="card-text">
+                  <del >$159.99</del>
+                  <strong>$135.99</strong>
+                </p>
+                <a href="cart.html" class="btn btn-primary" onclick="addToCart(event, this)">
+                  <i class="fa-solid fa-cart-shopping me-1"></i>
+                  Add to Cart
+              </a>
+              </div>
+            </div>
+          </div>
+          
+      </div>
+  
+      <div class="card-scroll" id="loop-scroll" aria-hidden="true">
+        <!-- Card 1 -->
+        <div class="col-md-4 mb-4" id ="loop">
+          <div class="card product-card">
+            <img src="pimg/tent1.jpg" class="card-img-top" alt="Product 1">
+            <div class="card-body">
+              <h5 class="card-title">White Camping Tent</h5>
+              <p class="text-success">You Can Get 3% Discount</p>
+              <p class="card-text">
+                <del >$59.99</del>
+                <strong>$58.19</strong>
+              </p>
+              <a href="cart.html" class="btn btn-primary" onclick="addToCart(event, this)">
+                <i class="fa-solid fa-cart-shopping me-1"></i>
+                Add to Cart
+            </a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-4 mb-4" id ="loop">
+          <div class="card product-card">
+            <img src="pimg/sb1.jpg" class="card-img-top" alt="Product 1">
+            <div class="card-body">
+              <h5 class="card-title">Flannel Lined Sleeping Bag</h5>
+              <p class="text-success">You Can Get 5% Discount</p>
+              <p class="card-text">
+                <del >$23.99</del>
+                <strong>$22.79</strong>
+              </p>
+              <a href="cart.html" class="btn btn-primary" onclick="addToCart(event, this)">
+                <i class="fa-solid fa-cart-shopping me-1"></i>
+                Add to Cart
+            </a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-4 mb-4" id ="loop">
+          <div class="card product-card">
+            <img src="pimg/cg2.jpg" class="card-img-top" alt="Product 1">
+            <div class="card-body">
+              <h5 class="card-title">Portable Camping Stove</h5>
+              <p class="text-success">You Can Get 15% Discount</p>
+              <p class="card-text">
+                <del >$159.99</del>
+                <strong>$135.99</strong>
+              </p>
+              <a href="cart.html" class="btn btn-primary" onclick="addToCart(event, this)">
+                <i class="fa-solid fa-cart-shopping me-1"></i>
+                Add to Cart
+            </a>
+            </div>
+          </div>
+        </div>
+        <!-- Duplicate cards for seamless loop -->
+        <!-- Card 1 -->
+        <div class="col-md-4 mb-4" id ="loop">
+          <div class="card product-card">
+            <img src="pimg/tent1.jpg" class="card-img-top" alt="Product 1">
+            <div class="card-body">
+              <h5 class="card-title">White Camping Tent</h5>
+              <p class="text-success">You Can Get 3% Discount</p>
+              <p class="card-text">
+                <del >$59.99</del>
+                <strong>$58.19</strong>
+              </p>
+              <a href="cart.html" class="btn btn-primary" onclick="addToCart(event, this)">
+                <i class="fa-solid fa-cart-shopping me-1"></i>
+                Add to Cart
+            </a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-4 mb-4" id ="loop">
+          <div class="card product-card">
+            <img src="pimg/sb1.jpg" class="card-img-top" alt="Product 1">
+            <div class="card-body">
+              <h5 class="card-title">Flannel Lined Sleeping Bag</h5>
+              <p class="text-success">You Can Get 5% Discount</p>
+              <p class="card-text">
+                <del >$23.99</del>
+                <strong>$22.79</strong>
+              </p>
+              <a href="cart.html" class="btn btn-primary" onclick="addToCart(event, this)">
+                <i class="fa-solid fa-cart-shopping me-1"></i>
+                Add to Cart
+            </a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-4 mb-4" id ="loop">
+          <div class="card product-card">
+            <img src="pimg/cg2.jpg" class="card-img-top" alt="Product 1">
+            <div class="card-body">
+              <h5 class="card-title">Portable Camping Stove</h5>
+              <p class="text-success">You Can Get 15% Discount</p>
+              <p class="card-text">
+                <del >$159.99</del>
+                <strong>$135.99</strong>
+              </p>
+              <a href="cart.html" class="btn btn-primary" onclick="addToCart(event, this)">
+                <i class="fa-solid fa-cart-shopping me-1"></i>
+                Add to Cart
+            </a>
+            </div>
+          </div>
+        </div>
+        
+    </div>
+  
+      
+    </div>
+    
 
  
 
@@ -218,10 +452,10 @@
 
 
 
-   <!-- Image Gallery -->
+   <!-- Image Activities -->
    <section id="gallery" class="py-5 bg-light">
     <div class="container">
-      <h2 class="text-center mb-4">Camping Gallery</h2>
+      <h2 class="text-center mb-4">Camping Activities</h2>
       <div class="row">
         <!-- Card 1: Winter Camping -->
         <div class="col-md-4 mb-4">
@@ -290,7 +524,8 @@
       </div>
     </div>
   </section>
-  
+
+ 
 
   
 
@@ -333,7 +568,7 @@
             <li><a href="#slide">Slideshow</a></li>
             <li><a href="#products">Popular Products</a></li>
             <!-- <li><a href="#carouselExample">Slideshow</a></li> -->
-            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#gallery">Activities</a></li>
             
           </ul>
           <ul class="list-unstyled">
@@ -352,5 +587,6 @@
 
   <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="bootstrap/js/index.js"></script>
+  <script src="bootstrap/js/product.js"></script>
 </body>
 </html>
