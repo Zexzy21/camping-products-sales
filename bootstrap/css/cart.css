@@ -1,0 +1,78 @@
+
+    /* Custom styles for the cart page */
+    .cart-section {
+      padding: 60px 0;
+    }
+    .cart-item {
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+    }
+    .cart-item img {
+      max-width: 100px;
+      height: auto;
+      border-radius: 8px;
+    }
+    .cart-summary {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    /* Add hover effect to cart items */
+.cart-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    background-color: #fff; /* Default background color */
+  }
+  
+  .cart-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+    transform: translateX(-5px); /* Slightly lift the item */
+    transform: translateY(-2px);
+    background-color: #f9f9f9; /* Change background color on hover */
+  }
+  
+  /* Hover effect for buttons inside cart items */
+  .cart-item .btn-outline-secondary:hover {
+    background-color: #007bff; /* Change button background color */
+    color: #fff; /* Change button text color */
+  }
+  
+  .cart-item .btn-danger:hover {
+    background-color: #dc3545; /* Change delete button background color */
+    color: #fff; /* Change delete button text color */
+  }
+
+
+  .footer {
+    position: relative;}
+
+    .card-container {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+  }
+
+  .card-scroll {
+      display: flex;
+      animation: scroll 10s linear infinite;
+  }
+
+  .card {
+      flex: 0 0 auto;
+      width: 150px; /* Adjust card width as needed */
+      margin-right: 10px; /* Space between cards */
+  }
+
+  @keyframes scroll {
+      0% {
+          transform: translateX(0);
+      }
+      100% {
+          transform: translateX(-100%);
+      }
+  }

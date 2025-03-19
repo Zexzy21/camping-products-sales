@@ -1,0 +1,77 @@
+
+  /* FAQ Section Styling */
+  #faqtitle {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .accordion-button {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 1rem;
+  }
+
+  .accordion-body {
+    font-size: 1rem;
+    color: #555;
+    padding: 1rem;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    #faqtitle {
+      font-size: 1.8rem;
+    }
+
+    .accordion-button {
+      font-size: 1rem;
+      padding: 0.8rem;
+    }
+
+    .accordion-body {
+      font-size: 0.9rem;
+      padding: 0.8rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    #faqtitle {
+      font-size: 1.5rem;
+    }
+
+    .accordion-button {
+      font-size: 0.95rem;
+      padding: 0.75rem;
+    }
+
+    .accordion-body {
+      font-size: 0.85rem;
+      padding: 0.75rem;
+    }
+  }
+
+  .card-container {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .card-scroll {
+            display: flex;
+            animation: scroll 10s linear infinite;
+        }
+
+        .card {
+            flex: 0 0 auto;
+            width: 150px; /* Adjust card width as needed */
+            margin-right: 10px; /* Space between cards */
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
