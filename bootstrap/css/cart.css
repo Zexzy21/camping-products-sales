@@ -51,28 +51,4 @@
   .footer {
     position: relative;}
 
-    .card-container {
-      display: flex;
-      overflow: hidden;
-      width: 100%;
-  }
-
-  .card-scroll {
-      display: flex;
-      animation: scroll 10s linear infinite;
-  }
-
-  .card {
-      flex: 0 0 auto;
-      width: 150px; /* Adjust card width as needed */
-      margin-right: 10px; /* Space between cards */
-  }
-
-  @keyframes scroll {
-      0% {
-          transform: translateX(0);
-      }
-      100% {
-          transform: translateX(-100%);
-      }
-  }
+    
