@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                         </div>
                         <div class="col-3 text-end">
-                            <button class="btn btn-danger" onclick="removeItem(${index})"><i class="fa-solid fa-trash"></i>
+                            <button class="btn btn-danger" onclick="removeItem(${index})"><i class="bi bi-trash"></i>
                             </button>
                            
                         </div>
