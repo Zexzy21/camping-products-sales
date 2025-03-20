@@ -426,6 +426,9 @@
     overflow: hidden;
     white-space: nowrap;
     width: 100%;
+    
+    border-radius: 10px;
+    
 }
 
 #loop-scroll {
@@ -445,6 +448,8 @@
     flex: 0 0 auto;
     width: 600px; /* Adjust card width as needed */
     margin-right: 10px; /* Space between cards */
+    border-radius: 50px;
+    
 }
 
 @keyframes scroll {
