@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="bootstrap/css/index.css">
   <link rel="stylesheet" href="bootstrap/css/product.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+ 
 </head>
 <body>
   
@@ -32,6 +33,7 @@
           
           <li class="nav-item">
             <a class="nav-link" href="product.html"><i class="fa-solid fa-box-open me-1"></i>
+             
               Products</a>
           </li>
          
@@ -148,7 +150,10 @@
             <h5 class="card-title">White Camping Tent <br>(Single / Double)</h5>
             
             
-            <p class="card-text"><strong>$59.99</strong></p>
+            <p class="card-text">
+              <del class="text-success">$59.99</del>
+              <strong>$58.19</strong>
+            </p>
             <a href="cart.html" class="btn btn-primary" onclick="addToCart(event, this)">
               <i class="bi bi-basket2 me-1"></i>
               Add to Cart
@@ -248,9 +253,12 @@
           <div class="card-body">
             <h5 class="card-title">Flannel Lined Sleeping Bag</h5>
            
-            <p class="card-text"><strong>$23.99</strong></p>
+            <p class="card-text">
+              <del class="text-success">$23.99</del>
+              <strong>$22.79</strong>
+            </p>
             <a href="cart.html" class="btn btn-primary" onclick="addToCart(event, this)">
-              <i class="bi bi-basket2 me-1"></i>
+              <i class="fa-solid fa-cart-shopping me-1"></i>
               Add to Cart
           </a>
           </div>
@@ -346,9 +354,12 @@
         <div class="card product-card">
           <img src="pimg/cg2.jpg" class="card-img-top" alt="Product 1">
           <div class="card-body">
-            <h5 class="card-title">Portable Camping Stove</h5>
+            <h5 class="card-title">Portable Camping <br>Stove</h5>
             
-            <p class="card-text"><strong>$159.99</strong></p>
+            <p class="card-text">
+              <del class="text-success">$159.99</del>
+              <strong>$135.99</strong>
+            </p>
             <a href="cart.html" class="btn btn-primary" onclick="addToCart(event, this)">
               <i class="bi bi-basket2 me-1"></i>
               Add to Cart
@@ -378,7 +389,7 @@
         <div class="card product-card">
           <img src="pimg/cg3.jpg" class="card-img-top" alt="Product 3">
           <div class="card-body">
-            <h5 class="card-title">Single Burner Stove</h5>
+            <h5 class="card-title">Single Burner <br> Stove</h5>
         
             <p class="card-text"><strong>$179.99</strong></p>
             <a href="cart.html" class="btn btn-primary" onclick="addToCart(event, this)">
