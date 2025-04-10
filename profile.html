@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook</title>
+    <style>
+        :root {
+            --fb-blue: #1877f2;
+            --fb-green: #42b72a;
+            --fb-bg: #f0f2f5;
+            --fb-post-bg: #ffffff;
+            --fb-text-primary: #050505;
+            --fb-text-secondary: #65676b;
+        }
+
+        
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--fb-bg);
+            color: var(--fb-text-primary);
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--fb-blue) !important;
+            font-size: 28px;
+        }
+        
+        .search-box {
+            background-color: #f0f2f5;
+            border-radius: 50px;
+            border: none;
+            padding: 8px 12px;
+        }
+        
+        .icon-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e4e6eb;
+            margin: 0 4px;
+            cursor: pointer;
+        }
+        
+        .icon-button.active {
+            background-color: #d8dadf;
+        }
+        
+        .icon-button i {
+            font-size: 20px;
+            color: var(--fb-text-primary);
+        }
+        
+        .left-sidebar {
+            position: sticky;
+            top: 60px;
+            height: calc(100vh - 60px);
+            overflow-y: auto;
+        }
+        
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        .sidebar-item:hover {
+            background-color: #e4e6eb;
+        }
+        
+        .sidebar-item i {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+        
+        .sidebar-item.active {
+            background-color: #e7f3ff;
+        }
+        
+        .sidebar-item.active i {
+            color: var(--fb-blue);
+        }
+        
+        .story-card {
+            height: 200px;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+        
+        .story-card .profile-pic {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid var(--fb-blue);
+        }
+        
+        .story-card .title {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .create-post {
+            background-color: var(--fb-post-bg);
+            border-radius: 10px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            padding: 12px 16px;
+            margin-bottom: 16px;
+        }
+        
+        .post-input {
+            background-color: #f0f2f5;
+            border-radius: 20px;
+            border: none;
+            padding: 8px 12px;
+            width: 100%;
+        }
+        
+        .post-divider {
+            height: 1px;
+            background-color: #ddd;
+            margin: 10px 0;
+        }
+        
+        .post-option {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        .post-option:hover {
+            background-color: #f0f2f5;
+        }
+        
+        .post-option i {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+        
+        .post {
+            background-color: var(--fb-post-bg);
+            border-radius: 10px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            padding: 12px 16px;
+            margin-bottom: 16px;
+        }
+        
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .post-header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .post-header-info h5 {
+            margin: 0;
+            font-size: 15px;
+        }
+        
+        .post-header-info p {
+            margin: 0;
+            font-size: 13px;
+            color: var(--fb-text-secondary);
+        }
+        
+        .post-content {
+            margin-bottom: 10px;
+        }
+        
+        .post-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .post-stats {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+            color: var(--fb-text-secondary);
+            font-size: 14px;
+        }
+        
+        .post-actions {
+            display: flex;
+            justify-content: space-around;
+            padding: 8px 0;
+        }
+        
+        .post-action {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        .post-action:hover {
+            background-color: #f0f2f5;
+        }
+        
+        .post-action i {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+        
+        .right-sidebar {
+            position: sticky;
+            top: 60px;
+            height: calc(100vh - 60px);
+            overflow-y: auto;
+        }
+        
+        .sponsored-item {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        
+        .sponsored-item:hover {
+            background-color: #e4e6eb;
+        }
+        
+        .sponsored-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+        
+        .sponsored-item-info h5 {
+            margin: 0;
+            font-size: 14px;
+        }
+        
+        .sponsored-item-info p {
+            margin: 0;
+            font-size: 12px;
+            color: var(--fb-text-secondary);
+        }
+        
+        .birthday-item {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        .birthday-item:hover {
+            background-color: #e4e6eb;
+        }
+        
+        .birthday-item i {
+            font-size: 24px;
+            margin-right: 10px;
+            color: var(--fb-blue);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        .contact-item:hover {
+            background-color: #e4e6eb;
+        }
+        
+        .contact-item img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .contact-item .status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #31a24c;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border: 2px solid white;
+        }
+        
+        .profile-pic-container {
+            position: relative;
+            width: fit-content;
+        }
+        
+        .camping-product {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .camping-product-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 15px;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: var(--fb-blue);
+            font-size: 18px;
+        }
+        
+        .btn-shop {
+            background-color: var(--fb-blue);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-weight: bold;
+        }
+        
+        .btn-shop:hover {
+            background-color: #166fe5;
+        }
+
+        /* Profile Header Styles */
+.profile-header {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 16px;
+}
+
+.cover-photo {
+    height: 350px;
+    background-color: #f0f2f5;
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.cover-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-pic {
+    width: 168px;
+    height: 168px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    position: absolute;
+    bottom: -50px;
+    left: 20px;
+    object-fit: cover;
+    background-color: #f0f2f5;
+}
+
+.profile-nav {
+    display: flex;
+    border-bottom: 1px solid #dddfe2;
+    padding: 0 16px;
+}
+
+.profile-nav-link {
+    color: #65676b;
+    font-weight: 600;
+    padding: 16px;
+    text-decoration: none;
+    position: relative;
+    font-size: 15px;
+}
+
+.profile-nav-link:hover {
+    color: #1877f2;
+    background-color: #f0f2f5;
+}
+
+.profile-nav-link.active {
+    color: #1877f2;
+}
+
+.profile-nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #1877f2;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+/* Create Post Styles */
+.create-post {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 16px;
+}
+
+.post-header-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-input {
+    background-color: #f0f2f5;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 15px;
+    width: 100%;
+    font-size: 15px;
+    outline: none;
+}
+
+.post-input::placeholder {
+    color: #65676b;
+}
+
+.post-option {
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    color: #65676b;
+    flex: 1;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.post-option:hover {
+    background-color: #f0f2f5;
+}
+
+/* Post Styles */
+.post {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 16px;
+}
+
+.post-actions {
+    display: flex;
+    border-top: 1px solid #dddfe2;
+    border-bottom: 1px solid #dddfe2;
+    margin: 0 -12px;
+    padding: 0 12px;
+}
+
+.post-action {
+    padding: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    color: #65676b;
+    flex: 1;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.post-action:hover {
+    background-color: #f0f2f5;
+}
+
+.post-action i {
+    margin-right: 8px;
+}
+
+/* Product Highlight Styles */
+.product-highlight {
+    border: 1px solid #dddfe2;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.product-highlight:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.product-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Utility Classes */
+.text-muted {
+    color: #65676b !important;
+}
+
+.text-primary {
+    color: #1877f2 !important;
+}
+
+.fw-bold {
+    font-weight: 600 !important;
+}
+
+.small {
+    font-size: 13px !important;
+}
+
+.rounded {
+    border-radius: 8px !important;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.mb-3 {
+    margin-bottom: 16px !important;
+}
+
+.me-2 {
+    margin-right: 8px !important;
+}
+
+.me-3 {
+    margin-right: 16px !important;
+}
+
+.ms-1 {
+    margin-left: 4px !important;
+}
+
+.p-3 {
+    padding: 16px !important;
+}
+
+/* Button Styles */
+.btn {
+    border-radius: 6px;
+    font-weight: 600;
+    padding: 8px 12px;
+    font-size: 15px;
+}
+
+.btn-outline-secondary {
+    border-color: #ced0d4;
+    color: #4b4f56;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #f0f2f5;
+}
+
+.btn-primary {
+    background-color: #1877f2;
+    border-color: #1877f2;
+}
+
+.btn-primary:hover {
+    background-color: #166fe5;
+    border-color: #166fe5;
+}
+
+/* Icon Colors */
+.text-danger {
+    color: #f3425f !important;
+}
+
+.text-success {
+    color: #45bd62 !important;
+}
+
+.text-warning {
+    color: #f7b928 !important;
+}
+    </style>
+    <!-- Bootstrap 5.3 embedded (no CDN) -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="facebook.html">Facebook</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse">
+                <div class="d-flex align-items-center w-100">
+                    <div class="flex-grow-1 mx-3">
+                        <div class="input-group">
+                            <span class="input-group-text bg-transparent border-end-0"><i class="fas fa-search"></i></span>
+                            <input type="text" class="form-control search-box border-start-0" placeholder="Search CampGear">
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex">
+                        <div class="icon-button active">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="icon-button">
+                            <i class="fas fa-tv"></i>
+                        </div>
+                        <div class="icon-button">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div class="icon-button">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="icon-button">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex ms-3">
+                        <div class="icon-button">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="icon-button">
+                            <i class="fas fa-comment-dots"></i>
+                        </div>
+                        <div class="icon-button">
+                            
+                            <a href="profile.html" ><i class="fas fa-user-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="container-fluid mt-5 pt-3">
+        <div class="row">
+            <!-- Left Sidebar -->
+            <div class="col-lg-3 left-sidebar d-none d-lg-block">
+                <div class="sidebar-item active">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Profile</span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-user-friends"></i>
+                    <span>Friends</span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Memories</span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-bookmark"></i>
+                    <span>Saved</span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-flag"></i>
+                    <span>Pages</span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Events</span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-users"></i>
+                    <span>Groups</span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-video"></i>
+                    <span>Watch</span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Marketplace</span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-heart"></i>
+                    <span>Fundraisers</span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-star"></i>
+                    <span>Favorites</span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-ellipsis-h"></i>
+                    <span>See More</span>
+                </div>
+                
+                <div class="mt-3">
+                    <h6 class="px-3">Your Shortcuts</h6>
+                    <div class="sidebar-item">
+                        <i class="fas fa-campground"></i>
+                        <span>Camping Enthusiasts</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <i class="fas fa-mountain"></i>
+                        <span>Hiking Buddies</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <i class="fas fa-fire"></i>
+                        <span>Outdoor Cooking</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Feed -->
+            <div class="col-lg-6">
+                <!-- Profile Header -->
+                <div class="profile-header mb-3">
+                    <div class="cover-photo">
+                        <img src="img/Camping7.jpg" alt="Cover" class="w-100 h-100" style="object-fit: cover;">
+                       
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-center p-3">
+                        <h4 class="fw-bold mb-0">Campaign Products Sales</h4>
+                        <div class="d-flex">
+                            <button class="btn btn-outline-secondary me-2">
+                                <i class="fas fa-pen me-1"></i> Edit
+                            </button>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-plus me-1"></i> Create
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-nav d-flex justify-content-center">
+                        <a href="#" class="profile-nav-link active">Posts</a>
+                        <a href="#" class="profile-nav-link">About</a>
+                        <a href="#" class="profile-nav-link">Photos</a>
+                        <a href="#" class="profile-nav-link">Videos</a>
+                        <a href="#" class="profile-nav-link">Events</a>
+                        <a href="#" class="profile-nav-link">Shop</a>
+                        <a href="#" class="profile-nav-link">More <i class="fas fa-chevron-down ms-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Create Post -->
+                <div class="create-post p-3 mb-3">
+                    <div class="d-flex mb-3">
+                        <img src="img/Camping7.jpg" alt="Profile" class="post-header-img me-2">
+                        <input type="text" class="form-control post-input" placeholder="What's on your mind, Wilderness?">
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div class="post-option">
+                            <i class="fas fa-video text-danger me-2"></i> Live video
+                        </div>
+                        <div class="post-option">
+                            <i class="fas fa-images text-success me-2"></i> Photo/video
+                        </div>
+                        <div class="post-option">
+                            <i class="fas fa-smile text-warning me-2"></i> Feeling/activity
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Post 1 - Product Promotion -->
+                <div class="post p-3 mb-3">
+                    <div class="d-flex justify-content-between mb-3">
+                        <div class="d-flex">
+                            <img src="img/Camping7.jpg" alt="Profile" class="post-header-img me-2">
+                            <div>
+                                <div class="fw-bold">Campaign Products Sales</div>
+                                <div class="text-muted small">June 12 at 2:30 PM · <i class="fas fa-globe-americas"></i></div>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fas fa-ellipsis-h text-muted"></i>
+                        </div>
+                    </div>
+                    
+                    <p class="mb-3">Our new Ultra-Light Backpacking Tent is here! Perfect for your summer adventures. Weighs only 2.5 lbs and sets up in under 5 minutes. Check it out below! 🏕️ #CampingEssentials</p>
+                    
+                    <!-- Product Highlight -->
+                    <div class="product-highlight mb-3">
+                        <div class="position-relative">
+                            <img src="pimg/tent6.jpg" alt="Ultra-Light Tent" class="product-img w-100">
+                            <span class="discount-badge">15% OFF</span>
+                        </div>
+                        <div class="p-3">
+                            <h6 class="fw-bold">Ultra-Light Backpacking Tent</h6>
+                            <p class="small text-muted mb-2">wildernessoutfitters.com</p>
+                            <p class="small mb-2">Perfect for solo adventurers who want to travel light without sacrificing comfort. Waterproof and durable for all weather conditions.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">$127.49</span>
+                                <span class="text-decoration-line-through text-muted small">$149.99</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between text-muted mb-3">
+                        <div>
+                            <i class="fas fa-thumbs-up text-primary me-1"></i> 124
+                        </div>
+                        <div>
+                            <span class="me-3">23 comments</span>
+                            <span>12 shares</span>
+                        </div>
+                    </div>
+                    
+                    <div class="post-actions d-flex justify-content-between mb-2">
+                        <div class="post-action flex-grow-1 text-center">
+                            <i class="far fa-thumbs-up me-2"></i> Like
+                        </div>
+                        <div class="post-action flex-grow-1 text-center">
+                            <i class="far fa-comment me-2"></i> Comment
+                        </div>
+                        <div class="post-action flex-grow-1 text-center">
+                            <i class="fas fa-share me-2"></i> Share
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Post 2 - Camping Tip -->
+                <div class="post p-3 mb-3">
+                    <div class="d-flex justify-content-between mb-3">
+                        <div class="d-flex">
+                            <img src="img/Camping7.jpg" alt="Profile" class="post-header-img me-2">
+                            <div>
+                                <div class="fw-bold">Campaign Products Sales</div>
+                                <div class="text-muted small">June 10 at 9:15 AM · <i class="fas fa-globe-americas"></i></div>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fas fa-ellipsis-h text-muted"></i>
+                        </div>
+                    </div>
+                    
+                    <p class="mb-3">⛺ Camping Tip of the Week ⛺</p>
+                    <p class="mb-3">Always pack an extra pair of dry socks in a waterproof bag. Wet feet can ruin a trip faster than anything else! Keep them in a separate bag so they stay dry no matter what.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1534187886935-1e1236e856c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Camping Socks" class="w-100 rounded mb-3">
+                    
+                    <div class="d-flex justify-content-between text-muted mb-3">
+                        <div>
+                            <i class="fas fa-thumbs-up text-primary me-1"></i> 89
+                        </div>
+                        <div>
+                            <span class="me-3">14 comments</span>
+                            <span>5 shares</span>
+                        </div>
+                    </div>
+                    
+                    <div class="post-actions d-flex justify-content-between mb-2">
+                        <div class="post-action flex-grow-1 text-center">
+                            <i class="far fa-thumbs-up me-2"></i> Like
+                        </div>
+                        <div class="post-action flex-grow-1 text-center">
+                            <i class="far fa-comment me-2"></i> Comment
+                        </div>
+                        <div class="post-action flex-grow-1 text-center">
+                            <i class="fas fa-share me-2"></i> Share
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Post 3 - Sale Announcement -->
+                <div class="post p-3 mb-3">
+                    <div class="d-flex justify-content-between mb-3">
+                        <div class="d-flex">
+                            <img src="img/Camping7.jpg" alt="Profile" class="post-header-img me-2">
+                            <div>
+                                <div class="fw-bold">Campaign Products Sales</div>
+                                <div class="text-muted small">June 8 at 11:45 AM · <i class="fas fa-globe-americas"></i></div>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fas fa-ellipsis-h text-muted"></i>
+                        </div>
+                    </div>
+                    
+                    <p class="mb-3">🚨 FLASH SALE ALERT! 🚨</p>
+                    <p class="mb-3">For the next 48 hours only, get 25% off all sleeping bags with code <span class="fw-bold">SLEEPWELL25</span>. Perfect timing for summer camping season!</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1598295893369-1918ffaf89a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Sleeping Bags" class="w-100 rounded mb-3">
+                    
+                    <div class="d-flex justify-content-between text-muted mb-3">
+                        <div>
+                            <i class="fas fa-thumbs-up text-primary me-1"></i> 156
+                        </div>
+                        <div>
+                            <span class="me-3">32 comments</span>
+                            <span>28 shares</span>
+                        </div>
+                    </div>
+                    
+                    <div class="post-actions d-flex justify-content-between mb-2">
+                        <div class="post-action flex-grow-1 text-center">
+                            <i class="far fa-thumbs-up me-2"></i> Like
+                        </div>
+                        <div class="post-action flex-grow-1 text-center">
+                            <i class="far fa-comment me-2"></i> Comment
+                        </div>
+                        <div class="post-action flex-grow-1 text-center">
+                            <i class="fas fa-share me-2"></i> Share
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Sidebar -->
+            <div class="col-lg-3 right-sidebar d-none d-lg-block">
+                <div class="mb-4">
+                    <h6>Sponsored</h6>
+                    <div class="sponsored-item">
+                        <img src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80">
+                        <div class="sponsored-item-info">
+                            <h5>CampGear - Premium Equipment</h5>
+                            <p>campgear.com</p>
+                        </div>
+                    </div>
+                    <div class="sponsored-item">
+                        <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80">
+                        <div class="sponsored-item-info">
+                            <h5>Outdoor Adventures</h5>
+                            <p>outdooradventures.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0">Birthdays</h6>
+                    </div>
+                    <div class="birthday-item">
+                        <i class="fas fa-birthday-cake"></i>
+                        <span><strong>Sarah Johnson</strong> and <strong>2 others</strong> have birthdays today.</span>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0">Contacts</h6>
+                        <div>
+                            <i class="fas fa-video me-2 text-muted"></i>
+                            <i class="fas fa-search me-2 text-muted"></i>
+                            <i class="fas fa-ellipsis-h text-muted"></i>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="profile-pic-container">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg">
+                            <div class="status"></div>
+                        </div>
+                        <span>Sarah Johnson</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="profile-pic-container">
+                            <img src="https://randomuser.me/api/portraits/men/22.jpg">
+                            <div class="status"></div>
+                        </div>
+                        <span>Mike Johnson</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="profile-pic-container">
+                            <img src="https://randomuser.me/api/portraits/women/33.jpg">
+                            <div class="status"></div>
+                        </div>
+                        <span>Jen Smith</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="profile-pic-container">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg">
+                            <div class="status"></div>
+                        </div>
+                        <span>Tom Wilson</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="profile-pic-container">
+                            <img src="https://randomuser.me/api/portraits/women/28.jpg">
+                            <div class="status"></div>
+                        </div>
+                        <span>Emily Davis</span>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h6>Group Conversations</h6>
+                    <div class="contact-item">
+                        <div class="profile-pic-container">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg">
+                            <img src="https://randomuser.me/api/portraits/men/22.jpg" style="position: absolute; bottom: 0; right: 0; width: 20px; height: 20px; border: 2px solid white;">
+                        </div>
+                        <span>Camping Trip Planning</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="profile-pic-container">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg">
+                            <img src="https://randomuser.me/api/portraits/women/28.jpg" style="position: absolute; bottom: 0; right: 0; width: 20px; height: 20px; border: 2px solid white;">
+                        </div>
+                        <span>Hiking Buddies</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS Bundle with Popper (embedded) -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple JavaScript for demonstration
+        document.addEventListener('DOMContentLoaded', function() {
+            // Like button functionality
+            document.querySelectorAll('.post-action').forEach(button => {
+                button.addEventListener('click', function() {
+                    if (this.querySelector('.fa-thumbs-up')) {
+                        const icon = this.querySelector('.fa-thumbs-up');
+                        if (icon.classList.contains('far')) {
+                            icon.classList.remove('far');
+                            icon.classList.add('fas', 'text-primary');
+                            this.querySelector('span').textContent = 'Liked';
+                        } else {
+                            icon.classList.remove('fas', 'text-primary');
+                            icon.classList.add('far');
+                            this.querySelector('span').textContent = 'Like';
+                        }
+                    }
+                });
+            });
+            
+            // Shop now button functionality
+            document.querySelectorAll('.btn-shop').forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Product added to cart! (This is a demo)');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

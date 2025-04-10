@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campaign Products Sales</title>
+  <!-- Link to your local Bootstrap 5.3 CSS file -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap/css/index.css">
+  <link rel="stylesheet" href="bootstrap/css/accessibility.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+  
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-light navbar-sm-bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Campaign Products Sales</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item ">
+            
+            <a class="nav-link active" aria-current="page" href="index.html"><i class="fa-solid fa-house me-1"></i>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="fa-solid fa-phone me-1"></i>Contact</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="product.html"><i class="fa-solid fa-box-open me-1"></i>
+              Products</a>
+          </li>
+         
+
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html"><i class="fa-solid fa-cart-shopping me-1"></i>Cart</a>
+          </li>
+          <!-- Vertical Line -->
+          <div class="vertical-line"></div>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+              <i class="fa-solid fa-user-plus me-1"></i>Log In
+            </a>
+          </li>
+          
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+   <!-- Login Modal -->
+   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Log In or Sign Up</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Tabs for Login and Sign Up -->
+          <ul class="nav nav-tabs mb-3" id="loginTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active text-black" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Log In</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link text-black" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup" type="button" role="tab" aria-controls="signup" aria-selected="false">Sign Up</button>
+            </li>
+          </ul>
+  
+          <!-- Login Form -->
+          <div class="tab-content" id="loginTabsContent">
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+              <form id="loginForm">
+                <div class="mb-3">
+                  <label for="loginUsername" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="loginUsername" required>
+                </div>
+                <div class="mb-3">
+                  <label for="loginPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Log In</button>
+              </form>
+            </div>
+  
+            <!-- Sign Up Form -->
+            <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+              <form id="signupForm">
+                <div class="mb-3">
+                  <label for="signupUsername" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="signupUsername" required>
+                </div>
+                <div class="mb-3">
+                  <label for="signupEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="signupEmail" required>
+                </div>
+                <div class="mb-3">
+                  <label for="signupPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="signupPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="accessibility-section">
+    <div class="container">
+      <h2 class="text-center mb-5">Accessibility Statement</h2>
+      <p>At Campaign Store, we are committed to ensuring that our website is accessible to everyone, including individuals with disabilities. We strive to provide an inclusive and user-friendly experience for all visitors.</p>
+
+      <h3>Our Commitment</h3>
+      <p>We are continuously working to improve the accessibility of our website by:</p>
+      <ul>
+        <li>Ensuring our website is compatible with screen readers and other assistive technologies.</li>
+        <li>Providing alternative text for images and other non-text content.</li>
+        <li>Using clear and simple language to make our content easy to understand.</li>
+        <li>Designing our website to be navigable using a keyboard.</li>
+        <li>Ensuring sufficient color contrast for text and background elements.</li>
+      </ul>
+
+      <h3>Accessibility Features</h3>
+      <p>Here are some of the accessibility features available on our website:</p>
+      <ul>
+        <li><strong>Keyboard Navigation:</strong> You can navigate our website using only your keyboard.</li>
+        <li><strong>Alt Text:</strong> All images have descriptive alt text for screen readers.</li>
+        <li><strong>Resizable Text:</strong> You can resize the text on our website using your browser's zoom feature.</li>
+        <li><strong>High Contrast Mode:</strong> Our website supports high contrast mode for better readability.</li>
+      </ul>
+
+      <h3>Feedback and Support</h3>
+      <p>If you encounter any accessibility issues or have suggestions for improvement, please contact us. We value your feedback and are committed to making our website accessible to all.</p>
+      <p>You can reach us at:</p>
+      <ul>
+        <li>Email: <a href="mailto:zexzy219@gmail.com">zexzy219@gmail.com</a></li>
+        <li>Phone: +95 9686772809</li>
+        <li>Address: Yangon, Myanmar(Burma)</li>
+      </ul>
+
+      
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer footer-animate">
+    <div class="container">
+      <div class="row">
+        <!-- About Us Section -->
+        <div class="col-md-4 mb-4">
+          <h5>About Us</h5>
+          <p>We provide the best camping services with quality gear, cozy stays, and helpful tips for your adventure.</p>
+        </div>
+  
+        <!-- Contact Info Section -->
+        <div class="col-md-4 mb-4">
+          <h5>Contact Info</h5>
+          <ul class="list-unstyled">
+            <li>Email: zexzy219@gmail.com</li>
+            <li>Phone: +95 9686772809</li>
+            <li>Address: Yangon, Myanmar(Burma)</li>
+          </ul>
+        </div>
+  
+        <!-- Follow Us Section -->
+        <div class="col-md-4 mb-4">
+          <h5>Follow Us</h5>
+          <ul class="list-unstyled">
+            <li><a href="facebook.html" target="_blank"> <i class="fab fa-facebook me-1"></i>Facebook</a></li>
+            <li><a href="twitter.html" target="_blank"><i class="fab fa-twitter me-1"></i>Twitter</a></li>
+            <li><a href="instagram.html" target="_blank"><i class="fab fa-instagram me-1"></i>Instagram</a></li>
+          </ul>
+        </div>
+  
+        <!-- Summary Section -->
+        <div class="col-md-4 mb-4">
+          <h5>Summary</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Copyright Section -->
+      <div class="text-center mt-4">
+        <p>&copy; 2025 Campaign Products Sales. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Link to your local Bootstrap 5.3 JS file -->
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="bootstrap/js/index.js"></script>
+</body>
+</html>

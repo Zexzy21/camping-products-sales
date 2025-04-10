@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="bootstrap/css/bootstrap.min.css.map" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --insta-bg: #fafafa;
+            --insta-border: #dbdbdb;
+            --insta-text: #262626;
+            --insta-blue: #0095f6;
+            --insta-dark-gray: #8e8e8e;
+        }
+        
+        body {
+            background-color: var(--insta-bg);
+            color: var(--insta-text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        .navbar {
+            background-color: white;
+            border-bottom: 1px solid var(--insta-border);
+            padding: 10px 0;
+        }
+        
+        .navbar-brand img {
+            height: 29px;
+        }
+        
+        .profile-header {
+            max-width: 935px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--insta-border);
+        }
+        
+        .profile-stats {
+            display: flex;
+            justify-content: space-between;
+            max-width: 350px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+        }
+        
+        .profile-bio h1 {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        
+        .profile-bio p {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .website-link {
+            color: var(--insta-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .btn-follow {
+            background-color: var(--insta-blue);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 9px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .btn-outline-secondary {
+            border: 1px solid var(--insta-border);
+            border-radius: 4px;
+            padding: 5px 9px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .tabs {
+            border-top: 1px solid var(--insta-border);
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .tab {
+            display: flex;
+            align-items: center;
+            padding: 16px 0;
+            margin: 0 30px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--insta-dark-gray);
+            text-transform: uppercase;
+        }
+        
+        .tab.active {
+            color: var(--insta-text);
+            border-top: 1px solid var(--insta-text);
+        }
+        
+        .tab i {
+            margin-right: 6px;
+            font-size: 12px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 935px;
+            margin: 0 auto;
+        }
+        
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+        
+        .overlay-stats {
+            color: white;
+            display: flex;
+            margin: 0 10px;
+        }
+        
+        .overlay-stats span {
+            margin: 0 5px;
+            font-weight: 600;
+        }
+        
+        .product-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--insta-blue);
+            color: white;
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--insta-dark-gray);
+            font-size: 12px;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .profile-stats {
+                margin: 20px auto;
+            }
+            
+            .profile-bio {
+                text-align: center;
+            }
+            
+            .profile-actions {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand " href="instagram.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" alt="Instagram">
+            </a>
+            
+        </div>
+    </nav>
+
+    <!-- Profile Header -->
+    <div class="container">
+        <div class="row profile-header">
+            <div class="col-md-4 text-center text-md-start">
+                <img src="img/Camping7.jpg" alt="WildTrail Gear" class="profile-pic">
+            </div>
+            <div class="col-md-8 mt-4 mt-md-0">
+                <div class="d-flex align-items-center mb-3">
+                    <h1 class="me-3">Camping Products Sales </h1>
+                    <button class="btn-follow me-2">Follow</button>
+                    <button class="btn-outline-secondary me-2"><i class="fas fa-ellipsis-h"></i></button>
+                </div>
+                
+                <div class="profile-stats mb-4">
+                    <div class="stat">
+                        <span class="stat-number">9</span>
+                        <span class="stat-label">posts</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">12.8k</span>
+                        <span class="stat-label">followers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">356</span>
+                        <span class="stat-label">following</span>
+                    </div>
+                </div>
+                
+                <div class="profile-bio">
+                    <h2>Camping Products Sales</h2>
+                    <p>Premium camping equipment for outdoor enthusiasts 🏕️</p>
+                    <p>Lightweight • Durable • Adventure-Ready</p>
+                    <a href="https://zexzy21.github.io/camping-products-sales/"target="_blank" class="website-link">www.camping-products-sales.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active">
+                <i class="fas fa-th"></i> Posts
+            </div>
+            <div class="tab">
+                <i class="far fa-bookmark"></i> Saved
+            </div>
+            <div class="tab">
+                <i class="far fa-user"></i> Tagged
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="container mt-3">
+        <div class="gallery">
+            <!-- Product 1 -->
+            <div class="gallery-item">
+                <img src="pimg/tent3.jpg" alt="Ultralight Tent">
+                <div class="gallery-item-overlay">
+                    <div class="overlay-stats">
+                        <i class="fas fa-heart"></i> <span>1,243</span>
+                        <i class="fas fa-comment ms-3"></i> <span>87</span>
+                    </div>
+                </div>
+                <div class="product-tag">SHOP</div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="gallery-item">
+                <img src="pimg/sb6.jpg" alt="Sleeping Bag">
+                <div class="gallery-item-overlay">
+                    <div class="overlay-stats">
+                        <i class="fas fa-heart"></i> <span>892</span>
+                        <i class="fas fa-comment ms-3"></i> <span>45</span>
+                    </div>
+                </div>
+                <div class="product-tag">NEW</div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="gallery-item">
+                <img src="pimg/cg3.jpg" alt="Camping Stove">
+                <div class="gallery-item-overlay">
+                    <div class="overlay-stats">
+                        <i class="fas fa-heart"></i> <span>1,507</span>
+                        <i class="fas fa-comment ms-3"></i> <span>112</span>
+                    </div>
+                </div>
+                <div class="product-tag">SALE</div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="gallery-item">
+                <img src="pimg/ot4.jpg" alt="Backpack">
+                <div class="gallery-item-overlay">
+                    <div class="overlay-stats">
+                        <i class="fas fa-heart"></i> <span>2,145</span>
+                        <i class="fas fa-comment ms-3"></i> <span>156</span>
+                    </div>
+                </div>
+                <div class="product-tag">BEST</div>
+            </div>
+            
+            <!-- Product 5 -->
+            <div class="gallery-item">
+                <img src="pimg/ot1.jpg" alt="Flashlight">
+                <div class="gallery-item-overlay">
+                    <div class="overlay-stats">
+                        <i class="fas fa-heart"></i> <span>756</span>
+                        <i class="fas fa-comment ms-3"></i> <span>32</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 6 -->
+            <div class="gallery-item">
+                <img src="pimg/cg5.jpg" alt="Camping Cookset">
+                <div class="gallery-item-overlay">
+                    <div class="overlay-stats">
+                        <i class="fas fa-heart"></i> <span>1,032</span>
+                        <i class="fas fa-comment ms-3"></i> <span>78</span>
+                    </div>
+                </div>
+                <div class="product-tag">SHOP</div>
+            </div>
+            
+            <!-- Product 7 -->
+            <div class="gallery-item">
+                <img src="pimg/tent2.jpg" alt="tent">
+                <div class="gallery-item-overlay">
+                    <div class="overlay-stats">
+                        <i class="fas fa-heart"></i> <span>1,876</span>
+                        <i class="fas fa-comment ms-3"></i> <span>94</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 8 -->
+            <div class="gallery-item">
+                <img src="pimg/cg1.jpg" alt="pots and pans">
+                <div class="gallery-item-overlay">
+                    <div class="overlay-stats">
+                        <i class="fas fa-heart"></i> <span>1,421</span>
+                        <i class="fas fa-comment ms-3"></i> <span>67</span>
+                    </div>
+                </div>
+                <div class="product-tag">NEW</div>
+            </div>
+            
+            <!-- Product 9 -->
+            <div class="gallery-item">
+                <img src="img/Camping19.jpg" alt="Welcome">
+                <div class="gallery-item-overlay">
+                    <div class="overlay-stats">
+                        <i class="fas fa-heart"></i> <span>2,543</span>
+                        <i class="fas fa-comment ms-3"></i> <span>201</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Simple JavaScript for interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching functionality
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Simulate follow button click
+            const followBtn = document.querySelector('.btn-follow');
+            if (followBtn) {
+                followBtn.addEventListener('click', function() {
+                    if (this.textContent === 'Follow') {
+                        this.textContent = 'Following';
+                        this.style.backgroundColor = 'transparent';
+                        this.style.color = 'var(--insta-text)';
+                        this.style.border = '1px solid var(--insta-border)';
+                    } else {
+                        this.textContent = 'Follow';
+                        this.style.backgroundColor = 'var(--insta-blue)';
+                        this.style.color = 'white';
+                        this.style.border = 'none';
+                    }
+                });
+            }
+            
+            // Gallery item click - would normally open a modal or link to product
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // In a real implementation, this would open the post or link to product
+                    console.log('Opening product details for: ' + this.querySelector('img').alt);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

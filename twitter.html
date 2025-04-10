@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --twitter-blue: #1DA1F2;
+            --twitter-dark: #15202B;
+            --twitter-light-gray: #E1E8ED;
+            --twitter-gray: #657786;
+            --twitter-light: #F5F8FA;
+        }
+        
+        body {
+            background-color: var(--twitter-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .twitter-header {
+            background-color: white;
+            border-bottom: 1px solid var(--twitter-light-gray);
+        }
+        
+        .logo {
+            color: var(--twitter-blue);
+            font-size: 1.8rem;
+        }
+        
+        .nav-link {
+            color: var(--twitter-gray);
+            font-weight: 600;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--twitter-blue);
+        }
+        
+        .profile-header {
+            background-color: var(--twitter-blue);
+            height: 200px;
+            position: relative;
+        }
+        
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            position: absolute;
+            bottom: -60px;
+            left: 20px;
+            object-fit: cover;
+        }
+        
+        .profile-info {
+            margin-top: 70px;
+        }
+        
+        .follow-btn {
+            background-color: var(--twitter-blue);
+            color: white;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .tweet-card {
+            border-bottom: 1px solid var(--twitter-light-gray);
+            transition: background-color 0.2s;
+        }
+        
+        .tweet-card:hover {
+            background-color: rgba(29, 161, 242, 0.03);
+        }
+        
+        .tweet-actions i {
+            color: var(--twitter-gray);
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        
+        .tweet-actions i:hover {
+            color: var(--twitter-blue);
+        }
+        
+        .trending-item {
+            padding: 10px 15px;
+            transition: background-color 0.2s;
+            cursor: pointer;
+        }
+        
+        .trending-item:hover {
+            background-color: rgba(29, 161, 242, 0.03);
+        }
+        
+        .trending-category {
+            font-size: 0.8rem;
+            color: var(--twitter-gray);
+        }
+        
+        .trending-name {
+            font-weight: bold;
+        }
+        
+        .trending-count {
+            font-size: 0.8rem;
+            color: var(--twitter-gray);
+        }
+        
+        .search-box {
+            background-color: var(--twitter-light-gray);
+            border-radius: 20px;
+            border: none;
+        }
+        
+        .who-to-follow {
+            background-color: #f7f9fa;
+            border-radius: 15px;
+        }
+        
+        .follow-suggestion {
+            transition: background-color 0.2s;
+            cursor: pointer;
+        }
+        
+        .follow-suggestion:hover {
+            background-color: rgba(29, 161, 242, 0.03);
+        }
+        
+        .footer-links a {
+            color: var(--twitter-gray);
+            font-size: 0.8rem;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .product-highlight {
+            border: 1px solid var(--twitter-light-gray);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .product-img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .discount-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff4d4d;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <!-- Left Sidebar -->
+            <div class="col-md-3 d-none d-md-block p-3">
+                <div class="d-flex flex-column h-100">
+                    <div class="logo mb-4">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <nav class="nav flex-column mb-auto">
+                        <a class="nav-link active mb-3" href="#"><i class="fas fa-home me-3"></i> Home</a>
+                        <a class="nav-link mb-3" href="#"><i class="fas fa-hashtag me-3"></i> Explore</a>
+                        <a class="nav-link mb-3" href="#"><i class="fas fa-bell me-3"></i> Notifications</a>
+                        <a class="nav-link mb-3" href="#"><i class="fas fa-envelope me-3"></i> Messages</a>
+                        <a class="nav-link mb-3" href="#"><i class="fas fa-bookmark me-3"></i> Bookmarks</a>
+                        <a class="nav-link mb-3" href="#"><i class="fas fa-list me-3"></i> Lists</a>
+                        <a class="nav-link mb-3" href="#"><i class="fas fa-user me-3"></i> Profile</a>
+                        <a class="nav-link mb-3" href="#"><i class="fas fa-ellipsis-h me-3"></i> More</a>
+                    </nav>
+                    
+                    <div class="d-flex align-items-center mt-auto">
+                        <img src="img/Camping7.jpg" alt="Profile" class="rounded-circle me-2" width="40" height="40">
+                        <div class="d-flex flex-column">
+                            <span class="fw-bold">Camping Products Sales</span>
+                            <span class="text-muted small">@CampingProductsSales</span>
+                        </div>
+                        <i class="fas fa-ellipsis-h ms-auto"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="col-md-6 border-start border-end">
+                <!-- Header -->
+                <div class="twitter-header sticky-top p-3 bg-white">
+                    <div class="d-flex align-items-center">
+                        <h5 class="fw-bold mb-0">Camping Products Sales</h5>
+                        <div class="ms-auto">
+                            <i class="far fa-star fs-5 text-muted"></i>
+                        </div>
+                    </div>
+                </div>
+                
+               
+                
+                
+                <!-- Profile Info -->
+                <div class="profile-info p-3 bg-white">
+                    <div class="d-flex justify-content-end mb-3">
+                        <button class="btn btn-outline-dark rounded-pill fw-bold">Edit profile</button>
+                    </div>
+                    <h4 class="fw-bold mb-1">Camping Products Sales</h4>
+                    <p class="text-muted mb-3">@CampingProductsSales</p>
+                    <p class="mb-3">Your premier source for high-quality camping gear and outdoor equipment. Explore the wilderness with confidence! 🏕️🔥</p>
+                    <div class="d-flex text-muted mb-3">
+                        <div class="me-4"><i class="fas fa-map-marker-alt me-1"></i> Yangon, Myanmar(Burma)</div>
+                        <div class="me-4"><i class="fas fa-link me-1"></i> <a href="https://zexzy21.github.io/camping-products-sales/"target="_blank" class="text-decoration-none">CampingProductsSales.com</a></div>
+                        <div class="me-4"><i class="far fa-calendar-alt me-1"></i> Joined January 2025</div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="me-4"><span class="fw-bold">1,234</span> <span class="text-muted">Following</span></div>
+                        <div><span class="fw-bold">5,678</span> <span class="text-muted">Followers</span></div>
+                    </div>
+                </div>
+                
+                <!-- Tabs -->
+                <ul class="nav nav-tabs border-bottom" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="tweets-tab" data-bs-toggle="tab" data-bs-target="#tweets" type="button" role="tab">Tweets</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="replies-tab" data-bs-toggle="tab" data-bs-target="#replies" type="button" role="tab">Replies</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="media-tab" data-bs-toggle="tab" data-bs-target="#media" type="button" role="tab">Media</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="likes-tab" data-bs-toggle="tab" data-bs-target="#likes" type="button" role="tab">Likes</button>
+                    </li>
+                </ul>
+                
+                <!-- Tab Content -->
+                <div class="tab-content bg-white" id="myTabContent">
+                    <div class="tab-pane fade show active" id="tweets" role="tabpanel">
+                        <!-- Tweet 1 - Product Promotion -->
+                        <div class="tweet-card p-3">
+                            <div class="d-flex">
+                                <img src="img/Camping7.jpg" alt="Profile" class="rounded-circle me-3" width="48" height="48">
+                                <div class="flex-grow-1">
+                                    <div class="d-flex align-items-center mb-1">
+                                        <span class="fw-bold me-1">Camping Products Sales</span>
+                                        <span class="text-muted me-1">@Camping Products Sales</span>
+                                        <span class="text-muted">· 2h</span>
+                                        <i class="fas fa-ellipsis-h ms-auto text-muted"></i>
+                                    </div>
+                                    <p class="mb-2">Just in! Our new Ultra-Light Backpacking Tent is perfect for your next adventure. Weighing only 2.5 lbs and sets up in under 5 minutes! 🏕️</p>
+                                    
+                                    <!-- Product Highlight -->
+                                    <div class="product-highlight mb-2">
+                                        <div class="position-relative">
+                                            <img src="pimg/tent6.jpg" alt="Ultra-Light Tent" class="product-img w-100">
+                                            <span class="discount-badge">15% OFF</span>
+                                        </div>
+                                        <div class="p-3">
+                                            <h6 class="fw-bold">Ultra-Light Backpacking Tent</h6>
+                                            <p class="small text-muted mb-2">Perfect for solo adventurers who want to travel light without sacrificing comfort.</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="fw-bold text-primary">$127.49</span>
+                                                <span class="text-decoration-line-through text-muted small">$149.99</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="tweet-actions mt-2">
+                                        <i class="far fa-comment"></i>
+                                        <i class="fas fa-retweet"></i>
+                                        <i class="far fa-heart"></i>
+                                        <i class="fas fa-share"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tweet 2 - Camping Tip -->
+                        <div class="tweet-card p-3">
+                            <div class="d-flex">
+                                <img src="img/Camping7.jpg" alt="Profile" class="rounded-circle me-3" width="48" height="48">
+                                <div class="flex-grow-1">
+                                    <div class="d-flex align-items-center mb-1">
+                                        <span class="fw-bold me-1">Camping Products Sales</span>
+                                        <span class="text-muted me-1">@CampingProductsSales</span>
+                                        <span class="text-muted">· 5h</span>
+                                        <i class="fas fa-ellipsis-h ms-auto text-muted"></i>
+                                    </div>
+                                    <p class="mb-2">Pro Tip: Always pack an extra pair of dry socks in a waterproof bag. Wet feet can ruin a trip faster than anything else! 🧦 #CampingTips</p>
+                                    <div class="tweet-actions mt-2">
+                                        <i class="far fa-comment"></i>
+                                        <i class="fas fa-retweet"></i>
+                                        <i class="far fa-heart"></i>
+                                        <i class="fas fa-share"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tweet 3 - Sale Announcement -->
+                        <div class="tweet-card p-3">
+                            <div class="d-flex">
+                                <img src="img/Camping7.jpg" alt="Profile" class="rounded-circle me-3" width="48" height="48">
+                                <div class="flex-grow-1">
+                                    <div class="d-flex align-items-center mb-1">
+                                        <span class="fw-bold me-1">Camping Products Sales</span>
+                                        <span class="text-muted me-1">@CampingProductsSales</span>
+                                        <span class="text-muted">· 1d</span>
+                                        <i class="fas fa-ellipsis-h ms-auto text-muted"></i>
+                                    </div>
+                                    <p class="mb-2">🚨 FLASH SALE ALERT! 🚨 For the next 24 hours only, get 25% off all sleeping bags with code SLEEPWELL25. Perfect timing for summer camping season! ⛺ #CampingEssentials</p>
+                                    
+                                    <!-- Product Image -->
+                                    <img src="pimg/sb6.jpg" alt="Sleeping Bags" class="rounded mb-2 w-100">
+                                    
+                                    <div class="tweet-actions mt-2">
+                                        <i class="far fa-comment"></i>
+                                        <i class="fas fa-retweet"></i>
+                                        <i class="far fa-heart"></i>
+                                        <i class="fas fa-share"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Other tabs would go here -->
+                    <div class="tab-pane fade" id="replies" role="tabpanel">
+                        <!-- Replies content would go here -->
+                    </div>
+                    <div class="tab-pane fade" id="media" role="tabpanel">
+                        <!-- Media content would go here -->
+                    </div>
+                    <div class="tab-pane fade" id="likes" role="tabpanel">
+                        <!-- Likes content would go here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Sidebar -->
+            <div class="col-md-3 d-none d-md-block p-3">
+                <!-- Search Box -->
+                <div class="mb-4">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text bg-light border-0"><i class="fas fa-search text-muted"></i></span>
+                        <input type="text" class="form-control search-box" placeholder="Search Twitter">
+                    </div>
+                </div>
+                
+                <!-- Trending Section -->
+                <div class="trending bg-white rounded-3 mb-4">
+                    <div class="p-3 border-bottom">
+                        <h5 class="fw-bold mb-0">What's happening</h5>
+                    </div>
+                    <div class="trending-item border-bottom">
+                        <div class="trending-category mb-1">Outdoors · Trending</div>
+                        <div class="trending-name mb-1">#NationalCampingMonth</div>
+                        <div class="trending-count">15.2K Tweets</div>
+                    </div>
+                    <div class="trending-item border-bottom">
+                        <div class="trending-category mb-1">Travel · Trending</div>
+                        <div class="trending-name mb-1">Yosemite</div>
+                        <div class="trending-count">8,432 Tweets</div>
+                    </div>
+                    <div class="trending-item border-bottom">
+                        <div class="trending-category mb-1">Business & finance · Trending</div>
+                        <div class="trending-name mb-1">REI</div>
+                        <div class="trending-count">5,123 Tweets</div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trending-category mb-1">Technology · Trending</div>
+                        <div class="trending-name mb-1">Solar Chargers</div>
+                        <div class="trending-count">3,456 Tweets</div>
+                    </div>
+                    <div class="p-3">
+                        <a href="#" class="text-decoration-none">Show more</a>
+                    </div>
+                </div>
+                
+                <!-- Who to follow -->
+                <div class="who-to-follow mb-4">
+                    <div class="p-3 border-bottom">
+                        <h5 class="fw-bold mb-0">Who to follow</h5>
+                    </div>
+                    <div class="follow-suggestion p-3 border-bottom d-flex align-items-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile" class="rounded-circle me-3" width="48" height="48">
+                        <div class="flex-grow-1">
+                            <div class="fw-bold">Outdoor Adventure</div>
+                            <div class="text-muted small">@OutdoorAdvMag</div>
+                        </div>
+                        <button class="btn btn-dark rounded-pill btn-sm">Follow</button>
+                    </div>
+                    <div class="follow-suggestion p-3 border-bottom d-flex align-items-center">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Profile" class="rounded-circle me-3" width="48" height="48">
+                        <div class="flex-grow-1">
+                            <div class="fw-bold">Hiking Enthusiasts</div>
+                            <div class="text-muted small">@HikeTheWorld</div>
+                        </div>
+                        <button class="btn btn-dark rounded-pill btn-sm">Follow</button>
+                    </div>
+                    <div class="follow-suggestion p-3 d-flex align-items-center">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Profile" class="rounded-circle me-3" width="48" height="48">
+                        <div class="flex-grow-1">
+                            <div class="fw-bold">Camping Recipes</div>
+                            <div class="text-muted small">@CampfireCooking</div>
+                        </div>
+                        <button class="btn btn-dark rounded-pill btn-sm">Follow</button>
+                    </div>
+                    <div class="p-3">
+                        <a href="#" class="text-decoration-none">Show more</a>
+                    </div>
+                </div>
+                
+                <!-- Footer Links -->
+                <div class="footer-links">
+                    <div class="d-flex flex-wrap mb-2">
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Cookie Policy</a>
+                        <a href="#">Accessibility</a>
+                    </div>
+                    <div class="d-flex flex-wrap">
+                        <a href="#">Ads info</a>
+                        <a href="#">More</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3 JS Bundle with Popper -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple JavaScript to handle some interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Like button functionality
+            document.querySelectorAll('.far.fa-heart').forEach(heart => {
+                heart.addEventListener('click', function() {
+                    this.classList.toggle('far');
+                    this.classList.toggle('fas');
+                    this.classList.toggle('text-danger');
+                });
+            });
+            
+            // Retweet button functionality
+            document.querySelectorAll('.fas.fa-retweet').forEach(retweet => {
+                retweet.addEventListener('click', function() {
+                    this.classList.toggle('text-success');
+                });
+            });
+            
+            // Simulate loading more tweets when scrolling to bottom
+            window.addEventListener('scroll', function() {
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
+                    // In a real app, you would load more tweets here
+                    console.log('Load more tweets...');
+                }
+            });
+            
+            // Mobile menu toggle would go here in a real implementation
+        });
+    </script>
+</body>
+</html>
