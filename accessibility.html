@@ -111,42 +111,108 @@
       </div>
     </div>
   </div>
-  <section class="accessibility-section">
-    <div class="container">
-      <h2 class="text-center mb-5">Accessibility Statement</h2>
-      <p>At Campaign Store, we are committed to ensuring that our website is accessible to everyone, including individuals with disabilities. We strive to provide an inclusive and user-friendly experience for all visitors.</p>
+  
+  <main id="main-content">
+    <section class="accessibility-section">
+      <div class="container">
+        <div class="accessibility-tools">
+          <h3 class="h4">Accessibility Tools</h3>
+          <button id="contrastToggle" class="accessibility-btn contrast-btn" aria-label="Toggle high contrast mode">
+            <i class="fas fa-adjust me-1" aria-hidden="true"></i>High Contrast
+          </button>
+          <button id="fontIncrease" class="accessibility-btn font-increase-btn" aria-label="Increase font size">
+            <i class="fas fa-text-height me-1" aria-hidden="true"></i>Increase Text
+          </button>
+          <button id="fontReset" class="accessibility-btn font-reset-btn" aria-label="Reset font size">
+            <i class="fas fa-undo me-1" aria-hidden="true"></i>Reset Text
+          </button>
+        </div>
+        
+        <h1 class="text-center mb-5">Accessibility Statement</h1>
+        <p>At Campaign Products Sales, we are committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.</p>
 
-      <h3>Our Commitment</h3>
-      <p>We are continuously working to improve the accessibility of our website by:</p>
-      <ul>
-        <li>Ensuring our website is compatible with screen readers and other assistive technologies.</li>
-        <li>Providing alternative text for images and other non-text content.</li>
-        <li>Using clear and simple language to make our content easy to understand.</li>
-        <li>Designing our website to be navigable using a keyboard.</li>
-        <li>Ensuring sufficient color contrast for text and background elements.</li>
-      </ul>
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Our Commitment</h2>
+            <p>We aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 at Level AA. Our efforts include:</p>
+            <ul class="list-group mb-4">
+              <li class="list-group-item">Keyboard-accessible navigation</li>
+              <li class="list-group-item">Screen reader compatibility</li>
+              <li class="list-group-item">Alternative text for images</li>
+              <li class="list-group-item">Clear and consistent layout</li>
+              <li class="list-group-item">Responsive design for all devices</li>
+            </ul>
+          </div>
+          
+          <div class="col-md-6">
+            <h2>Accessibility Features</h2>
+            <div class="accordion" id="accessibilityAccordion">
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Keyboard Navigation
+                  </button>
+                </h3>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accessibilityAccordion">
+                  <div class="accordion-body">
+                    Our website can be navigated using only a keyboard. Use Tab to move forward, Shift+Tab to move backward, and Enter to activate elements.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Screen Reader Compatibility
+                  </button>
+                </h3>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accessibilityAccordion">
+                  <div class="accordion-body">
+                    We've designed our site to work with screen readers like JAWS, NVDA, and VoiceOver. All images have descriptive alt text.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Text Resizing
+                  </button>
+                </h3>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accessibilityAccordion">
+                  <div class="accordion-body">
+                    You can resize text up to 200% without loss of content or functionality. Use the buttons above or your browser's zoom feature.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <h3>Accessibility Features</h3>
-      <p>Here are some of the accessibility features available on our website:</p>
-      <ul>
-        <li><strong>Keyboard Navigation:</strong> You can navigate our website using only your keyboard.</li>
-        <li><strong>Alt Text:</strong> All images have descriptive alt text for screen readers.</li>
-        <li><strong>Resizable Text:</strong> You can resize the text on our website using your browser's zoom feature.</li>
-        <li><strong>High Contrast Mode:</strong> Our website supports high contrast mode for better readability.</li>
-      </ul>
-
-      <h3>Feedback and Support</h3>
-      <p>If you encounter any accessibility issues or have suggestions for improvement, please contact us. We value your feedback and are committed to making our website accessible to all.</p>
-      <p>You can reach us at:</p>
-      <ul>
-        <li>Email: <a href="mailto:zexzy219@gmail.com">zexzy219@gmail.com</a></li>
-        <li>Phone: +95 9686772809</li>
-        <li>Address: Yangon, Myanmar(Burma)</li>
-      </ul>
-
-      
-    </div>
-  </section>
+        <h2 class="mt-5">Feedback</h2>
+        <p>We welcome your feedback on the accessibility of our website. Please let us know if you encounter accessibility barriers:</p>
+        
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="h5 card-title">Contact Information</h3>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-envelope me-2" aria-hidden="true"></i> Email: <a href="mailto:zexzy219@gmail.com">zexzy219@gmail.com</a></li>
+              <li><i class="fas fa-phone me-2" aria-hidden="true"></i> Phone: +95 9686772809</li>
+              <li><i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i> Address: Yangon, Myanmar (Burma)</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="alert alert-info">
+          <h3 class="h5">Technical Specifications</h3>
+          <p>This website relies on the following technologies to work with assistive technologies:</p>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer id="contact" class="footer footer-animate">
@@ -199,5 +265,6 @@
   <!-- Link to your local Bootstrap 5.3 JS file -->
   <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="bootstrap/js/index.js"></script>
+  <script src="bootstrap/js/accessibility.js"></script>
 </body>
 </html>
