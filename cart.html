@@ -27,7 +27,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
+          <li class="nav-item ">
             
             <a class="nav-link active" aria-current="page" href="index.html"><i class="fa-solid fa-house me-1"></i>Home</a>
           </li>
@@ -44,7 +44,7 @@
           <li class="nav-item">
             <a class="nav-link" href="cart.html"><i class="fa-solid fa-cart-shopping me-1"></i>Cart</a>
           </li>
-
+          
           
           <li class="nav-item">
             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
@@ -52,8 +52,7 @@
             </a>
           </li>
           
-          
-          
+         
         </ul>
       </div>
     </div>
@@ -183,47 +182,314 @@
     
 </section>
 
-<section id="products" class="py-5 bg-light">
+
+
+<!-- Reviews Section -->
+<section class="reviews-section py-5 bg-light">
   <div class="container">
-      <h2 class="text-center mb-4">Best Seller</h2>
-      <div class="row">
-          <!-- Card 1: Tents -->
-          <div class="col-md-4 mb-4">
-              <div class="card product-card h-100">
-                  <img src="img/Camping12.jpg" class="card-img-top gallery-img" alt="Tents">
-                  <div class="card-body d-flex flex-column">
-                      <h5 class="card-title text-center">Tents</h5>
-                      <p class="card-text">Find your perfect tent—lightweight, family-sized, or weatherproof. Durable, easy setup, and designed for every adventure. Camp in comfort! </p>
-                      <a href="product.html#tent" class="btn btn-primary m-auto">See More Tents </a>
-                  </div>
-              </div>
-          </div>
-          <!-- Card 2: Sleeping Bags -->
-          <div class="col-md-4 mb-4">
-              <div class="card product-card h-100">
-                  <img src="img/Camping13.jpg" class="card-img-top gallery-img" alt="Sleeping Bags">
-                  <div class="card-body d-flex flex-column">
-                      <h5 class="card-title text-center">Sleeping Bags</h5>
-                      <p class="card-text">Sleep soundly in the wild! Explore cozy, lightweight sleeping bags for every season and adventure. Stay warm, stay comfortable! </p>
-                      <a href="product.html#sleeping-bags" class="btn btn-primary m-auto">See More Sleeping Bags</a>
-                  </div>
-              </div>
-          </div>
-          <!-- Card 3: Cooking Gears -->
-          <div class="col-md-4 mb-4">
-              <div class="card product-card h-100">
-                  <img src="img/Camping14.jpg" class="card-img-top gallery-img" alt="Cooking Gears">
-                  <div class="card-body d-flex flex-column">
-                      <h5 class="card-title text-center">Cooking Gears</h5>
-                      <p class="card-text">Cook up a storm outdoors! Discover portable stoves, durable cookware, and handy utensils for delicious campsite meals. Adventure tastes better! </p>
-                      <a href="product.html#cooking-gear" class="btn btn-primary m-auto">See More Cooking Gears</a>
-                  </div>
-              </div>
-          </div>
+    <h2 class="text-center mb-5">Customer Reviews</h2>
+    
+    <!-- Review Filter -->
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <div class="dropdown">
+          <button class="btn btn-outline-primary dropdown-toggle" type="button" id="reviewFilterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Filter by Product Category
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="reviewFilterDropdown">
+            <li><a class="dropdown-item" href="#" data-category="all">All Categories</a></li>
+            <li><a class="dropdown-item" href="#" data-category="tents">Tents</a></li>
+            <li><a class="dropdown-item" href="#" data-category="sleeping-bags">Sleeping Bags</a></li>
+            <li><a class="dropdown-item" href="#" data-category="cooking-gear">Cooking Gear</a></li>
+            <li><a class="dropdown-item" href="#" data-category="others">Others</a></li>
+          </ul>
+        </div>
       </div>
-      
+      <div class="col-md-6 text-md-end">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addReviewModal">
+          <i class="bi bi-pencil-square me-1"></i> Write a Review
+        </button>
+      </div>
+    </div>
+
+    <!-- Reviews Container -->
+    <div class="row" id="reviewsContainer">
+      <!-- Review 1 - Tent -->
+      <div class="col-md-6 mb-4" data-category="tents">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between mb-3">
+              <div>
+                <h5 class="card-title mb-1">White Camping Tent</h5>
+                <div class="text-warning mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+              <small class="text-muted">2 weeks ago</small>
+            </div>
+            <h6 class="text-primary">Perfect for weekend camping!</h6>
+            <p class="card-text">This tent was incredibly easy to set up and kept us dry during a sudden rainstorm. The material feels durable and the ventilation is excellent. Highly recommend for casual campers.</p>
+            <div class="d-flex align-items-center">
+              <img src="pimg/user1.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
+              <div>
+                <p class="mb-0 fw-bold">Sarah J.</p>
+                <small class="text-muted">Verified Purchase</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 - Sleeping Bag -->
+      <div class="col-md-6 mb-4" data-category="sleeping-bags">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between mb-3">
+              <div>
+                <h5 class="card-title mb-1">Ultra-Warm Sleeping Bag</h5>
+                <div class="text-warning mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                </div>
+              </div>
+              <small class="text-muted">1 month ago</small>
+            </div>
+            <h6 class="text-primary">Warm but a bit bulky</h6>
+            <p class="card-text">Kept me toasty in 30°F weather, which is impressive. The only downside is it's quite bulky to carry on long hikes. Perfect for car camping though.</p>
+            <div class="d-flex align-items-center">
+              <img src="pimg/user2.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
+              <div>
+                <p class="mb-0 fw-bold">Michael T.</p>
+                <small class="text-muted">Verified Purchase</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 - Cooking Gear -->
+      <div class="col-md-6 mb-4" data-category="cooking-gear">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between mb-3">
+              <div>
+                <h5 class="card-title mb-1">Portable Camping Stove</h5>
+                <div class="text-warning mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                </div>
+              </div>
+              <small class="text-muted">3 weeks ago</small>
+            </div>
+            <h6 class="text-primary">Great little stove</h6>
+            <p class="card-text">Boils water quickly and is very compact. The only reason I didn't give 5 stars is because the flame adjustment could be more precise. Works perfectly for my backpacking trips.</p>
+            <div class="d-flex align-items-center">
+              <img src="pimg/user3.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
+              <div>
+                <p class="mb-0 fw-bold">Emily R.</p>
+                <small class="text-muted">Verified Purchase</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 4 - Others -->
+      <div class="col-md-6 mb-4" data-category="others">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between mb-3">
+              <div>
+                <h5 class="card-title mb-1">Binoculars</h5>
+                <div class="text-warning mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                  <i class="bi bi-star"></i>
+                </div>
+              </div>
+              <small class="text-muted">2 months ago</small>
+            </div>
+            <h6 class="text-primary">Good for the price</h6>
+            <p class="card-text">These are decent binoculars for casual use. The image quality is okay in daylight but not great in low light. For the price, they're a good value but don't expect premium performance.</p>
+            <div class="d-flex align-items-center">
+              <img src="pimg/user4.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
+              <div>
+                <p class="mb-0 fw-bold">David K.</p>
+                <small class="text-muted">Verified Purchase</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 5 - Tent -->
+      <div class="col-md-6 mb-4" data-category="tents">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between mb-3">
+              <div>
+                <h5 class="card-title mb-1">Family Camping Tent</h5>
+                <div class="text-warning mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+              <small class="text-muted">1 week ago</small>
+            </div>
+            <h6 class="text-primary">Spacious and sturdy!</h6>
+            <p class="card-text">Our family of 5 fit comfortably with room to spare. Setup was straightforward with two people, and it held up perfectly during a windy night. The multiple doors are a game-changer.</p>
+            <div class="d-flex align-items-center">
+              <img src="pimg/user5.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
+              <div>
+                <p class="mb-0 fw-bold">Lisa M.</p>
+                <small class="text-muted">Verified Purchase</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 6 - Cooking Gear -->
+      <div class="col-md-6 mb-4" data-category="cooking-gear">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between mb-3">
+              <div>
+                <h5 class="card-title mb-1">Stainless Steel Cooking Pots</h5>
+                <div class="text-warning mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+              <small class="text-muted">3 days ago</small>
+            </div>
+            <h6 class="text-primary">Excellent quality</h6>
+            <p class="card-text">These pots heat evenly and clean up easily. The handles stay cool and the lids fit snugly. I've used them on both my camping stove and over an open fire with no issues.</p>
+            <div class="d-flex align-items-center">
+              <img src="pimg/user6.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
+              <div>
+                <p class="mb-0 fw-bold">Robert P.</p>
+                <small class="text-muted">Verified Purchase</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
   </div>
 </section>
+
+<!-- Add Review Modal -->
+<div class="modal fade" id="addReviewModal" tabindex="-1" aria-labelledby="addReviewModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addReviewModalLabel">Write a Review</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="reviewForm">
+          <div class="mb-3">
+            <label for="reviewProduct" class="form-label">Product</label>
+            <select class="form-select" id="reviewProduct" required>
+              <option value="" selected disabled>Select a product</option>
+              <optgroup label="Tents">
+                <option value="White Camping Tent">White Camping Tent</option>
+                <option value="Toogh Camping Tent">Toogh Camping Tent</option>
+                <option value="Premium Camping Tent">Premium Camping Tent</option>
+              </optgroup>
+              <optgroup label="Sleeping Bags">
+                <option value="Flannel Lined Sleeping Bag">Flannel Lined Sleeping Bag</option>
+                <option value="Ultra-Warm Sleeping Bag">Ultra-Warm Sleeping Bag</option>
+              </optgroup>
+              <optgroup label="Cooking Gear">
+                <option value="Portable Camping Stove">Portable Camping Stove</option>
+                <option value="Stainless Steel Cooking Pots">Stainless Steel Cooking Pots</option>
+              </optgroup>
+              <optgroup label="Others">
+                <option value="Binoculars">Binoculars</option>
+                <option value="Flashlight">Flashlight</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Rating</label>
+            <div class="rating-stars">
+              <i class="bi bi-star-fill fs-3 me-1" data-rating="1"></i>
+              <i class="bi bi-star-fill fs-3 me-1" data-rating="2"></i>
+              <i class="bi bi-star-fill fs-3 me-1" data-rating="3"></i>
+              <i class="bi bi-star-fill fs-3 me-1" data-rating="4"></i>
+              <i class="bi bi-star-fill fs-3 me-1" data-rating="5"></i>
+              <input type="hidden" id="reviewRating" value="0" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="reviewTitle" class="form-label">Review Title</label>
+            <input type="text" class="form-control" id="reviewTitle" placeholder="Summarize your experience" required>
+          </div>
+          <div class="mb-3">
+            <label for="reviewText" class="form-label">Your Review</label>
+            <textarea class="form-control" id="reviewText" rows="4" placeholder="Share details of your experience with this product" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="reviewerName" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="reviewerName" required>
+          </div>
+          <div class="mb-3">
+            <label for="reviewerEmail" class="form-label">Email (optional)</label>
+            <input type="email" class="form-control" id="reviewerEmail">
+            <small class="text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="verifiedPurchase">
+            <label class="form-check-label" for="verifiedPurchase">
+              I purchased this product
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="submitReview">Submit Review</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Review Success Toast -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="reviewToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header bg-success text-white">
+      <strong class="me-auto">Success</strong>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Thank you for your review! It has been submitted successfully.
+    </div>
+  </div>
+</div>
+
+
+
+
 
 
    <!-- Success Modal -->
@@ -303,5 +569,6 @@
   <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="bootstrap/js/index.js"></script>
   <script src="bootstrap/js/cart.js"></script>
+  <script src="bootstrap/js/review.js"></script>
 </body>
 </html>
