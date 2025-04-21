@@ -51,4 +51,25 @@
   .footer {
     position: relative;}
 
+
+   
+ 
+      .rating-stars i {
+        cursor: pointer;
+        color: #dee2e6;
+      }
+      .rating-stars i.text-warning {
+        color: #ffc107;
+      }
+      .reviews-section .card {
+        transition: transform 0.2s;
+      }
+      .reviews-section .card:hover {
+        transform: translateY(-5px);
+      }
+      .toast.hide {
+        display: none;
+      }
+
+
     
