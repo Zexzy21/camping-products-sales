@@ -431,9 +431,13 @@
     
 }
 
-#loop-scroll {
+#loop-scroll1 {
     display: flex;
     animation: scroll 50s linear infinite;
+}
+#loop-scroll2 {
+  display: flex;
+  animation: scroll 50s linear infinite;
 }
 
 /* 
@@ -444,12 +448,90 @@
 
 
 
-#loop {
+#loop1 {
     flex: 0 0 auto;
     width: 600px; /* Adjust card width as needed */
     margin-right: 10px; /* Space between cards */
     border-radius: 50px;
     
+}
+#loop2 {
+  flex: 0 0 auto;
+  width: 600px; /* Adjust card width as needed */
+  margin-right: 10px; /* Space between cards */
+  border-radius: 50px;
+  
+}
+#loop3 {
+  flex: 0 0 auto;
+  width: 600px; /* Adjust card width as needed */
+  margin-right: 10px; /* Space between cards */
+  border-radius: 50px;
+  
+}
+#loop4 {
+  flex: 0 0 auto;
+  width: 600px; /* Adjust card width as needed */
+  margin-right: 10px; /* Space between cards */
+  border-radius: 50px;
+  
+}
+#loop5 {
+  flex: 0 0 auto;
+  width: 600px; /* Adjust card width as needed */
+  margin-right: 10px; /* Space between cards */
+  border-radius: 50px;
+  
+}
+#loop6 {
+  flex: 0 0 auto;
+  width: 600px; /* Adjust card width as needed */
+  margin-right: 10px; /* Space between cards */
+  border-radius: 50px;
+  
+}
+
+#loop7 {
+  flex: 0 0 auto;
+  width: 600px; /* Adjust card width as needed */
+  margin-right: 10px; /* Space between cards */
+  border-radius: 50px;
+  
+}
+#loop8 {
+flex: 0 0 auto;
+width: 600px; /* Adjust card width as needed */
+margin-right: 10px; /* Space between cards */
+border-radius: 50px;
+
+}
+#loop9 {
+flex: 0 0 auto;
+width: 600px; /* Adjust card width as needed */
+margin-right: 10px; /* Space between cards */
+border-radius: 50px;
+
+}
+#loop10 {
+flex: 0 0 auto;
+width: 600px; /* Adjust card width as needed */
+margin-right: 10px; /* Space between cards */
+border-radius: 50px;
+
+}
+#loop11 {
+flex: 0 0 auto;
+width: 600px; /* Adjust card width as needed */
+margin-right: 10px; /* Space between cards */
+border-radius: 50px;
+
+}
+#loop12 {
+flex: 0 0 auto;
+width: 600px; /* Adjust card width as needed */
+margin-right: 10px; /* Space between cards */
+border-radius: 50px;
+
 }
 
 @keyframes scroll {
